@@ -1,15 +1,21 @@
 public class Card{
+	
 	// cardCode means cardImage select
 	/// cardState 0 means back, 1 means front
 	private int cardCode;
 	private int cardState = 0;
 	
-	public Card(int cardValue)
+	//Constructor
+	public Card(int cardCodeValue)
 	{
-		cardCode = cardValue;
+		cardCode = cardCodeValue;
 	}
 	
+	//getter&setter
 	public int getCardCode() {return cardCode;}
-	
-	//Image output according to card code
+	public void setCardCode(int codeValue)
+	{
+		cardCode = codeValue;
+	}
+	//Image output according to card codes
 }
