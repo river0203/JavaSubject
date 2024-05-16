@@ -1,13 +1,15 @@
 import java.util.*;
 
 public class MainGame{
+	
+	
 	public static void main(String args[])
 	{
 		boolean clearingGame;
 		int presentPlayerLife;
-		int presentLevel = 0;
+		int presentLevel = 1;
 		int randomCardCode;
-		
+
 		Random gen = new Random();
 		gen.setSeed(System.currentTimeMillis());
 		
@@ -17,8 +19,9 @@ public class MainGame{
 			
 			for(int i = 0; i < 9; i++)
 			{
-				randomCardCode = gen.nextInt(2);
+				randomCardCode = (gen.nextInt(3));
 				objCard[i] = new Card(randomCardCode);
+				//objCard[i].checkCardCode();
 			}
 		}
 		else if(presentLevel == 2)
@@ -27,8 +30,9 @@ public class MainGame{
 			
 			for(int j = 0; j < 16; j++)
 			{
-				randomCardCode = gen.nextInt(3);
+				randomCardCode = gen.nextInt(4);
 				objCard[j] = new Card(randomCardCode);
+				//objCard[j].checkCardCode();
 			}
 		}
 		else
@@ -37,8 +41,9 @@ public class MainGame{
 			
 			for(int k = 0; k < 25; k++)
 			{
-				randomCardCode = gen.nextInt(3);
+				randomCardCode = gen.nextInt(5);
 				objCard[k] = new Card(randomCardCode);
+				//objCard[k].checkCardCode();
 			}
 		}
 	}

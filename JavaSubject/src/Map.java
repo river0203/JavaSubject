@@ -1,10 +1,15 @@
 // function : only show image resource
+import java.awt.event.*;
 
 public class Map{
 	private int mapLevel = 0;
 	private boolean gameClear;
 	private int playerLife;
 	
+	public Map()
+	{
+		
+	}
 	public Map(int level)
 	{
 		// print Map UI
@@ -26,4 +31,13 @@ public class Map{
 		playerLife = value;
 	}
 	
+	
+	private class MapListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
 }
