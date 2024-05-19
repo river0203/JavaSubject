@@ -1,10 +1,15 @@
 // function : only show image resource
+import java.awt.*;
+import javax.swing.*;
 import java.awt.event.*;
 
-public class Map{
+public class Map extends JPanel{
 	private int mapLevel = 0;
 	private boolean gameClear;
 	private int playerLife;
+	
+	private JPanel mainPanel;
+	private JLabel lblTitel, lblHint;
 	
 	public Map()
 	{
