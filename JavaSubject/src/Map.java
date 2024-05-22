@@ -1,5 +1,4 @@
 // function : only show image resource
-import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -34,15 +33,5 @@ public class Map extends JPanel{
 	public void setPlayerLife(int value)
 	{
 		playerLife = value;
-	}
-	
-	
-	private class MapListener implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
 	}
 }
