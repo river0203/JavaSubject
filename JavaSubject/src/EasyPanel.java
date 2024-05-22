@@ -7,7 +7,10 @@ class EasyPanel extends JPanel {
 	   private JLabel lblTitle;
 	   private JButton btnHome, btnHint;
 	   private JPanel mainPanel;
+<<<<<<< HEAD
+=======
 	   private Image questCard;
+>>>>>>> 05b8a4a882f7b3f6dbce6bc1019208e5b6c0e437
 	   private CardLayout cardLayout;
 
 	   
@@ -44,8 +47,12 @@ class EasyPanel extends JPanel {
 	      btnHint.setBackground(new Color(255,199,199));
 	      add(btnHint);
 	      
+<<<<<<< HEAD
+
+=======
 	      ImageIcon cardImage = new ImageIcon("ImageRescource/Level1Back.jpg");
 	      cardImage = questCard.getImage();
+>>>>>>> 05b8a4a882f7b3f6dbce6bc1019208e5b6c0e437
 	   }
 	   
 	   private class ButtonListener implements ActionListener
