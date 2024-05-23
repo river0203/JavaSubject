@@ -188,7 +188,9 @@ class EasyPanel extends JPanel {
 			   }
 			   if(obj1 == cardBtn[1])
 			   {
-				  
+				   selec1 = 1;
+				   matchCard(1, 3);
+				   matchCard(1, 8);
 			   }
 			   if(obj1 == cardBtn[2])
 			   {
@@ -200,22 +202,22 @@ class EasyPanel extends JPanel {
 			   if(obj1 == cardBtn[3])
 			   {
 				  
-				   
+				   selec2 = 1;
 			   }
 			   if(obj1 == cardBtn[4])
 			   {
-				   
+				   selec1 = 1;
 				   
 			   }
 			   if(obj1 == cardBtn[5])
 			   {
-				  
+				   selec2 = 1;
 				  
 			   }
 			   
 			   if(obj1 == cardBtn[6])
 			   {
-				   
+				   selec3 = 1;
 
 			   }
 			   if(obj1 == cardBtn[7])
@@ -226,7 +228,7 @@ class EasyPanel extends JPanel {
 			   }
 			   if(obj1 == cardBtn[8])
 			   {
-				  
+				   selec3 = 1;
 
 			   }
 			   
