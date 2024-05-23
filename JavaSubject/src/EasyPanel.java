@@ -24,15 +24,8 @@ class EasyPanel extends JPanel {
 	   private JPanel cardPanel11;
 	   private JPanel cardPanel12;
 	   
-	   private JButton cardBtn1;
-	   private JButton cardBtn2;
-	   private JButton cardBtn3;
-	   private JButton cardBtn4;
-	   private JButton cardBtn5;
-	   private JButton cardBtn6;
-	   private JButton cardBtn7;
-	   private JButton cardBtn8;
-	   private JButton cardBtn9;
+	   static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8","b9"};
+	   static private JButton[] cardBtn = new JButton[9];
 	   
 	   public EasyPanel(JPanel mainPanel, CardLayout cardLayout){
 	      this.mainPanel = mainPanel;
@@ -120,17 +113,16 @@ class EasyPanel extends JPanel {
 	      cardPanel9.setLayout(null);
 	      add(cardPanel9);
 	      
-	      cardBtn1 = new JButton("C");
-	      cardBtn1.setBounds(145, 260, 50, 30);
-	      cardBtn1.setFont(new Font("Verdana", Font.BOLD, 19));
-	      cardBtn1.addActionListener(btnL);
-	      add(cardBtn1);
+	      for(int i = 0; i < 9; i++)
+	      {
+	    	  cardBtn[i] = new JButton(btnTxt[i]);
+	    	  cardBtn[i].setVisible(true);
+	    	  cardBtn[i].addActionListener(btnL);
+	    	  add(cardBtn[i]);
+	      }
 	      
-	      cardBtn2 = new JButton("C");
-	      cardBtn2.setBounds(145+100, 260, 50, 30);
-	      cardBtn2.setFont(new Font("Verdana", Font.BOLD, 19));
-	      cardBtn2.addActionListener(btnL);
-	      add(cardBtn2);
+	      cardBtn[0].setBounds(145, 260, 50, 30);
+	      cardBtn[1].setBounds(145+100, 260, 50, 30);
 	   }
 	   private class ButtonListener implements ActionListener
 	   {
@@ -139,10 +131,9 @@ class EasyPanel extends JPanel {
 			   if(obj == btnHome) {
 				   cardLayout.show(mainPanel,"Home");
 			   }
-			   else if(obj == cardBtn1)
+			   else if(obj == cardBtn[1])
 			   {
-				   Card cc = new Card(2);
-				   cc.checkCardCode();
+				   System.out.print("HI");
 			   }
 		   }
 	   }
