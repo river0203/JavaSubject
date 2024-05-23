@@ -4,59 +4,68 @@ import java.awt.event.*;
 import java.util.*;
 
 class EasyPanel extends JPanel {
-	   private JLabel lblTitle;
-	   private JButton btnHome, btnHint;
-	   private JPanel mainPanel;
-	   private CardLayout cardLayout;
-	   private ButtonListener btnL;
+	
+	static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8","b9"};
+	static private JButton[] cardBtn = new JButton[9];
+	private Card gameCard = new Card();
+	
+	private int selec1 = 0;
+	private int selec2 = 0;
+	private int selec3 = 0;
+	private JLabel lblTitle;
+	private JButton btnHome, btnHint;
+	private JPanel mainPanel;
+	private CardLayout cardLayout;
+	private ButtonListener btnL;
+	private int randomCardCode;
+	private int[] selectCard = new int[9];
+
+	
 	   
 	   // change to array
-	   private JPanel cardPanel1;
-	   private JPanel cardPanel2;
-	   private JPanel cardPanel3;
-	   private JPanel cardPanel4;
-	   private JPanel cardPanel5;
-	   private JPanel cardPanel6;
-	   private JPanel cardPanel7;
-	   private JPanel cardPanel8;
-	   private JPanel cardPanel9;
-	   private JPanel cardPanel10;
-	   private JPanel cardPanel11;
-	   private JPanel cardPanel12;
+	private JPanel cardPanel1;
+	private JPanel cardPanel2;
+	private JPanel cardPanel3;
+	private JPanel cardPanel4;
+	private JPanel cardPanel5;
+	private JPanel cardPanel6;
+	private JPanel cardPanel7;
+	private JPanel cardPanel8;
+	private JPanel cardPanel9;
+	private JPanel cardPanel10;
+	private JPanel cardPanel11;
+	private JPanel cardPanel12;
 	   
-	   static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8","b9"};
-	   static private JButton[] cardBtn = new JButton[9];
-	   
-	   public EasyPanel(JPanel mainPanel, CardLayout cardLayout){
-	      this.mainPanel = mainPanel;
-	      this.cardLayout = cardLayout;
+	public EasyPanel(JPanel mainPanel, CardLayout cardLayout){
+		this.mainPanel = mainPanel;
+	    this.cardLayout = cardLayout;
 	      
-	      btnL = new ButtonListener();
-	      setPreferredSize(new Dimension(600,700));
-	      setBackground(Color.white);
-	      setLayout(null);
+	    btnL = new ButtonListener();
+	    setPreferredSize(new Dimension(600,700));
+	    setBackground(Color.white);
+	    setLayout(null);
 
-	      lblTitle = new JLabel("EASY LEVEL");
-	      lblTitle.setBounds(200, 10, 200, 50);
-	      lblTitle.setFont(new Font("Verdana", Font.BOLD, 30));
-	      lblTitle.setVerticalAlignment(SwingConstants.BOTTOM);
-	      lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-	      add(lblTitle);
+	    lblTitle = new JLabel("EASY LEVEL");
+	    lblTitle.setBounds(200, 10, 200, 50);
+	    lblTitle.setFont(new Font("Verdana", Font.BOLD, 30));
+	    lblTitle.setVerticalAlignment(SwingConstants.BOTTOM);
+	    lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+	    add(lblTitle);
 	      
 	      
-	      btnHome = new JButton("HOME");
-	      btnHome.setBounds(28, 60, 100, 50);
-	      btnHome.setFont(new Font("Verdana", Font.BOLD, 19));
-	      btnHome.setBackground(new Color(255,199,199));
-	      btnHome.addActionListener(btnL);
+	    btnHome = new JButton("HOME");
+	    btnHome.setBounds(28, 60, 100, 50);
+	    btnHome.setFont(new Font("Verdana", Font.BOLD, 19));
+	    btnHome.setBackground(new Color(255,199,199));
+	    btnHome.addActionListener(btnL);
 	      
-	      add(btnHome);
+	    add(btnHome);
 	      
-	      btnHint = new JButton("HINT");
-	      btnHint.setBounds(480, 60, 100, 50);
-	      btnHint.setFont(new Font("Verdana", Font.BOLD, 19));
-	      btnHint.setBackground(new Color(255,199,199));
-	      add(btnHint);
+	    btnHint = new JButton("HINT");
+	    btnHint.setBounds(480, 60, 100, 50);
+	    btnHint.setFont(new Font("Verdana", Font.BOLD, 19));
+	    btnHint.setBackground(new Color(255,199,199));
+	    add(btnHint);
 	      
 	      //cardPnaels
 	      cardPanel1 =  new JPanel();
@@ -123,18 +132,104 @@ class EasyPanel extends JPanel {
 	      
 	      cardBtn[0].setBounds(145, 260, 50, 30);
 	      cardBtn[1].setBounds(145+100, 260, 50, 30);
+	      cardBtn[2].setBounds(145+200, 260, 50, 30);
+	      
+	      cardBtn[3].setBounds(145, 260+180, 50, 30);
+	      cardBtn[4].setBounds(145+100, 260+180, 50, 30);
+	      cardBtn[5].setBounds(145+200, 260+180, 50, 30);
+	      
+	      cardBtn[6].setBounds(145, 260+(180*2), 50, 30);
+	      cardBtn[7].setBounds(145+100, 260+(180*2), 50, 30);
+	      cardBtn[8].setBounds(145+200, 260+(180*2), 50, 30);
+	      
+	      selectCard[0] = gameCard.getCardCode1(0, 0);
+	      selectCard[1] = gameCard.getCardCode1(0, 1);
+	      selectCard[2] = gameCard.getCardCode1(0, 2);
+	      selectCard[3] = gameCard.getCardCode1(1, 0);
+	      selectCard[4] = gameCard.getCardCode1(1, 1);
+	      selectCard[5] = gameCard.getCardCode1(1, 2);
+	      selectCard[6] = gameCard.getCardCode1(2, 0);
+	      selectCard[7] = gameCard.getCardCode1(2, 1);
+	      selectCard[8] = gameCard.getCardCode1(2, 2);
+	      
 	   }
-	   private class ButtonListener implements ActionListener
+	
+	public void matchCard(int card1, int card2)
+	{
+		boolean cardCheck = false;
+		
+		if((selec1 + selec2) == 2 || (selec1 + selec3) == 2 || (selec2 + selec3) == 2)
+		{
+			if(selectCard[card1] == selectCard[card2])
+			{
+				System.out.print("Hi");
+				//cardCheck = true;
+			}
+			selec1 = 0;
+			selec2 = 0;
+			selec3 = 0;
+		}
+		//return cardCheck;
+	}
+
+	private class ButtonListener implements ActionListener
 	   {
 		   public void actionPerformed(ActionEvent e) {
-			   Object obj = e.getSource();
-			   if(obj == btnHome) {
+			   Object obj1 = e.getSource();
+			   if(obj1 == btnHome) {
 				   cardLayout.show(mainPanel,"Home");
 			   }
-			   else if(obj == cardBtn[1])
+			   
+			   if(obj1 == cardBtn[0])
 			   {
-				   System.out.print("HI");
+				   selec1 = 1;
+				   matchCard(0, 2);
+				   matchCard(0, 7);
 			   }
+			   if(obj1 == cardBtn[1])
+			   {
+				  
+			   }
+			   if(obj1 == cardBtn[2])
+			   {
+				  selec2 = 1;
+				  matchCard(0, 2);
+				  matchCard(2, 7);
+			   }
+			   
+			   if(obj1 == cardBtn[3])
+			   {
+				  
+				   
+			   }
+			   if(obj1 == cardBtn[4])
+			   {
+				   
+				   
+			   }
+			   if(obj1 == cardBtn[5])
+			   {
+				  
+				  
+			   }
+			   
+			   if(obj1 == cardBtn[6])
+			   {
+				   
+
+			   }
+			   if(obj1 == cardBtn[7])
+			   {
+				   selec3 = 1;
+				   matchCard(0, 7);
+				   matchCard(2, 7);
+			   }
+			   if(obj1 == cardBtn[8])
+			   {
+				  
+
+			   }
+			   
 		   }
 	   }
 	      
