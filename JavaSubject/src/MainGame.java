@@ -9,13 +9,6 @@ import javax.imageio.ImageIO;
 public class MainGame {
     public static void main(String[] args) {
        
-       /*
-       boolean clearingGame;
-        int presentPlayerLife;
-        int presentLevel = 1;
-        int randomCardCode;
-        */
-    
         JFrame frame = new JFrame("FIND THE SAME CARD");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 700);
@@ -43,26 +36,5 @@ public class MainGame {
         frame.setVisible(true);
         
         cardLayout.show(mainPanel, "Home");
-        
-        Random gen = new Random();
-        gen.setSeed(System.currentTimeMillis());
-        
-        
-        //Card objCard = new Card();
-        
-        /*
-        if(presentLevel == 1)
-        {
-           
-        }
-        else if(presentLevel == 2)
-        {
-           
-        }
-        else
-        {
-           
-        }
-        */
     }
 }
