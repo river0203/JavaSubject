@@ -132,10 +132,12 @@ class EasyPanel extends JPanel {
     	if(isOpen[0] != (-1))
     	{
     		isOpen[1] = btnNum;
+    		cardBtn[isOpen[1]].setEnabled(false);
     	}
     	else
     	{
     		isOpen[0] = btnNum;
+    		cardBtn[isOpen[0]].setEnabled(false);
     	}
     	
     }
@@ -148,6 +150,11 @@ class EasyPanel extends JPanel {
 				System.out.print("Match ");
 				cardBtn[isOpen[0]].setEnabled(false);
 				cardBtn[isOpen[1]].setEnabled(false);
+			}
+			else
+			{
+				cardBtn[isOpen[0]].setEnabled(true);
+				cardBtn[isOpen[1]].setEnabled(true);
 			}
 			isOpen[0] = isOpen[1] = -1;
 		}
