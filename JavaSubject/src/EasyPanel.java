@@ -15,7 +15,7 @@ class EasyPanel extends JPanel {
 	
 	//move to Class Card
     private int[] selectCard = new int[9];
-    private boolean[] isOpen = new boolean[9];
+    private int[] isOpen = {-1, -1};
     private boolean isMatch = false;
     private int[] aryOpenCardIndex = {0, 0}; 
 	
@@ -127,33 +127,39 @@ class EasyPanel extends JPanel {
 	   selectCard[8] = gameCard.getCardCode1(2, 2);
 	      
     }
-    
-	public void matchCard(int btnNum)
+    public void InputCard(int btnNum)
+    {
+    	if(isOpen[0] != (-1))
+    	{
+    		isOpen[1] = btnNum;
+    	}
+    	else
+    	{
+    		isOpen[0] = btnNum;
+    	}
+    	
+    }
+	public void MatchCard()
 	{
-		for(int i = 0; i < 9; i++)
+		if(isOpen[0] != (-1) && isOpen[1] != (-1))
 		{
-			if(isOpen[i] == true)
+			if(selectCard[isOpen[0]] == selectCard[isOpen[1]])
 			{
-				if(selectCard[btnNum] == selectCard[i])
-				{
-					System.out.print("Match");
-					cardBtn[btnNum].setEnabled(false);
-					cardBtn[i].setEnabled(false);
-				}
-				else
-				{
-					isOpen[btnNum] = false;
-				}
+				System.out.print("Match ");
+				cardBtn[isOpen[0]].setEnabled(false);
+				cardBtn[isOpen[1]].setEnabled(false);
 			}
+			isOpen[0] = isOpen[1] = -1;
 		}
     }
 	
-	public void resetCardBtn()
+	public void ResetCardBtn()
 	{
 		for(int i = 0; i < 9; i++)
 		{
 			cardBtn[i].setEnabled(true);
 		}
+		isOpen[0] = isOpen[1] = -1;
 	}
     
     private class ButtonListener implements ActionListener
@@ -161,56 +167,56 @@ class EasyPanel extends JPanel {
        public void actionPerformed(ActionEvent e) {
           Object obj1 = e.getSource();
           if(obj1 == btnHome) {
-        	  resetCardBtn();
+        	  ResetCardBtn();
              cardLayout.show(mainPanel,"Home");
           }
           
           if(obj1 == cardBtn[0])
 		   {
-        	  isOpen[0] = true;
-        	  matchCard(0);
+        	  InputCard(0);
+        	  MatchCard();
 		   }
 		   if(obj1 == cardBtn[1])
 		   {
-			   isOpen[1] = true;
-			   matchCard(1);
+			   InputCard(1);
+			   MatchCard();
 		   }
 		   if(obj1 == cardBtn[2])
 		   {
-			   isOpen[2] = true;
-			   matchCard(2);
+			   InputCard(2);
+			   MatchCard();
 		   }
 		   
 		   if(obj1 == cardBtn[3])
 		   {
-			   isOpen[3] = true;
-			   matchCard(3);
+			   InputCard(3);
+			   MatchCard();
 		   }
 		   if(obj1 == cardBtn[4])
 		   {
-			   isOpen[4] = true;
-			   matchCard(4);
+			   InputCard(4);
+			   MatchCard();
 		   }
 		   if(obj1 == cardBtn[5])
 		   {
-			   isOpen[5] = true;
-			   matchCard(5);
+			   InputCard(5);
+			   MatchCard();
 		   }
 		   
 		   if(obj1 == cardBtn[6])
 		   {
-			   isOpen[6] = true;
-			   matchCard(6);
+			   InputCard(6);
+			   MatchCard();
 		   }
 		   if(obj1 == cardBtn[7])
 		   {
-			   isOpen[7] = true;
-			   matchCard(7);
+			   InputCard(7);
+			   MatchCard();
 		   }
 		   if(obj1 == cardBtn[8])
 		   {
-			   isOpen[8] = true;
-			   matchCard(8);
+			   InputCard(8);
+			   MatchCard();
 		   }
 
        }
