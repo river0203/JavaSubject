@@ -3,7 +3,8 @@ import java.awt.event.*;
 public class Card{
 	// cardCode means cardImage select
 	/// cardState 0 means back, 1 means front
-	private int cardState = 0;
+	private boolean isOpen = false;
+	private boolean isMatch = false;
 	private int[][] aryCardCoedEasy = {{1, 2, 1},{2, 0, 0},{0, 1, 2}};
 	
 	//Constructor
@@ -15,6 +16,23 @@ public class Card{
 	public int getCardCode1(int x, int y)
 	{
 		return aryCardCoedEasy[x][y];
+	}
+	
+	public boolean getIsOpen()
+	{
+		return isOpen;
+	}
+	public void setIsOpent(boolean value)
+	{
+		isOpen = value;
+	}
+	public boolean getIsMatch()
+	{
+		return isMatch;
+	}
+	public void setIsMatch(boolean value)
+	{
+		isMatch = value;
 	}
 
 	//method
