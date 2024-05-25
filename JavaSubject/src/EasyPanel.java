@@ -37,6 +37,17 @@ class EasyPanel extends JPanel {
        setBackground(Color.white);
        setLayout(null);
        
+       ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+       ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+
+       
        topPanel = new JPanel();
        topPanel.setBounds(0, 10, 600, 150);
        topPanel.setBackground(Color.white);
@@ -81,22 +92,31 @@ class EasyPanel extends JPanel {
        
        cardPanel[0].setBounds(140, 10, 60, 80);
        cardPanel[0].setBackground(new Color(170, 240, 180));
+       cardPanel[0].add(back0);
 	   cardPanel[1].setBounds(140+100, 10, 60, 80);
+	   cardPanel[1].add(back1);
 	   cardPanel[1].setBackground(new Color(170, 240, 180));
 	   cardPanel[2].setBounds(140+(100*2), 10, 60, 80);
+	   cardPanel[2].add(back2);
 	   cardPanel[2].setBackground(new Color(170, 240, 180));
 	   cardPanel[3].setBounds(140, 10+180, 60, 80);
 	   cardPanel[3].setBackground(new Color(170, 240, 180));
+	   cardPanel[3].add(back3);
 	   cardPanel[4].setBounds(140+100, 10+180, 60, 80);
 	   cardPanel[4].setBackground(new Color(170, 240, 180));
+	   cardPanel[4].add(back4);
 	   cardPanel[5].setBounds(140+(100*2), 10+180, 60, 80);
 	   cardPanel[5].setBackground(new Color(170, 240, 180));
+	   cardPanel[5].add(back5);
 	   cardPanel[6].setBounds(140, 10+(180*2), 60, 80);
 	   cardPanel[6].setBackground(new Color(170, 240, 180));
+	   cardPanel[6].add(back6);
 	   cardPanel[7].setBounds(140+100, 10+(180*2), 60, 80);
 	   cardPanel[7].setBackground(new Color(170, 240, 180));
+	   cardPanel[7].add(back7);
 	   cardPanel[8].setBounds(140+(100*2), 10+(180*2), 60, 80);
 	   cardPanel[8].setBackground(new Color(170, 240, 180));
+	   cardPanel[8].add(back8);
 	      
 	   for(int i = 0; i < 9; i++)
 	   {
