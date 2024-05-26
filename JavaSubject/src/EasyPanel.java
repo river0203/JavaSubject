@@ -97,22 +97,23 @@ class EasyPanel extends JPanel {
        }
        
        cardPanel[0].setBounds(140, 10, 60, 80);
-       cardPanel[0].add(back0);
 	   cardPanel[1].setBounds(140+100, 10, 60, 80);
-	   cardPanel[1].add(back1);
 	   cardPanel[2].setBounds(140+(100*2), 10, 60, 80);
-	   cardPanel[2].add(back2);
 	   cardPanel[3].setBounds(140, 10+180, 60, 80);
-	   cardPanel[3].add(back3);
 	   cardPanel[4].setBounds(140+100, 10+180, 60, 80);
-	   cardPanel[4].add(back4);
 	   cardPanel[5].setBounds(140+(100*2), 10+180, 60, 80);
-	   cardPanel[5].add(back5);
 	   cardPanel[6].setBounds(140, 10+(180*2), 60, 80);
-	   cardPanel[6].add(back6);
 	   cardPanel[7].setBounds(140+100, 10+(180*2), 60, 80);
-	   cardPanel[7].add(back7);
 	   cardPanel[8].setBounds(140+(100*2), 10+(180*2), 60, 80);
+	   
+	   cardPanel[0].add(back0);
+	   cardPanel[1].add(back1);
+	   cardPanel[2].add(back2);
+	   cardPanel[3].add(back3);
+	   cardPanel[4].add(back4);
+	   cardPanel[5].add(back5);
+	   cardPanel[6].add(back6);
+	   cardPanel[7].add(back7);
 	   cardPanel[8].add(back8);
 	      
 	   for(int i = 0; i < 9; i++)
@@ -326,6 +327,26 @@ class EasyPanel extends JPanel {
 			cardBtn[i].setEnabled(true);
 		}
 		isOpen[0] = isOpen[1] = -1;
+		
+		cardPanel[0].add(back0);
+		cardPanel[1].add(back1);
+		cardPanel[2].add(back2);
+		cardPanel[3].add(back3);
+		cardPanel[4].add(back4);
+		cardPanel[5].add(back5);
+		cardPanel[6].add(back6);
+		cardPanel[7].add(back7);
+		cardPanel[8].add(back8);
+		
+		back0.repaint();
+		back1.repaint();
+		back2.repaint();
+		back3.repaint();
+		back4.repaint();
+		back5.repaint();
+		back6.repaint();
+		back7.repaint();
+		back8.repaint();
 	}
     
     private class ButtonListener implements ActionListener
