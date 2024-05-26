@@ -83,37 +83,38 @@ class HomePanel extends JPanel {
              cardLayout.show(mainPanel, "How");
           }
        }
+       public void mouseEntered(MouseEvent e) {
+           Object obj = e.getSource();
+           if(obj == btnStart) {
+              JButton btn = (JButton)obj;
+              btnStart.setBackground(Color.black);
+              btnStart.setForeground(Color.red);
+           }
+           else if (obj == btnHow) {
+              JButton btn = (JButton)obj;
+              btnHow.setBackground(Color.black);
+              btnHow.setForeground(Color.red);
+           }
+        }
+        public void mouseExited(MouseEvent e) {
+           Object obj = e.getSource();
+           if(obj == btnStart) {         
+              JButton btn = (JButton)e.getSource();
+              btnStart.setBackground(Color.white);
+              btnStart.setForeground(Color.black);
+           }
+           else if (obj == btnHow) {
+              JButton btn = (JButton)e.getSource();
+              btnHow.setBackground(Color.white);
+              btnHow.setForeground(Color.black);
+           }
+        }
        public void mouseClicked(MouseEvent e) {}
       
       public void mousePressed(MouseEvent e) {} 
       
       public void mouseReleased(MouseEvent e) {}
       
-      public void mouseEntered(MouseEvent e) {
-         Object obj = e.getSource();
-         if(obj == btnStart) {
-            JButton btn = (JButton)obj;
-            btnStart.setBackground(Color.black);
-            btnStart.setForeground(Color.red);
-         }
-         else if (obj == btnHow) {
-            JButton btn = (JButton)obj;
-            btnHow.setBackground(Color.black);
-            btnHow.setForeground(Color.red);
-         }
-      }
-      public void mouseExited(MouseEvent e) {
-         Object obj = e.getSource();
-         if(obj == btnStart) {         
-            JButton btn = (JButton)e.getSource();
-            btnStart.setBackground(Color.white);
-            btnStart.setForeground(Color.black);
-         }
-         else if (obj == btnHow) {
-            JButton btn = (JButton)e.getSource();
-            btnHow.setBackground(Color.white);
-            btnHow.setForeground(Color.black);
-         }
-      }      
+            
    }
 }

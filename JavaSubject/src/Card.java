@@ -5,7 +5,7 @@ public class Card{
 	/// cardState 0 means back, 1 means front
 	private boolean isOpen = false;
 	private boolean isMatch = false;
-	private int[][] aryCardCoedEasy = {{1, 2, 1},{2, 0, 0},{0, 1, 2}};
+	private int[][] aryCardCoedEasy = {{1, 2, 2},{0, 1, 0},{3, 4, 3}};
 	
 	//Constructor
 	public Card()
