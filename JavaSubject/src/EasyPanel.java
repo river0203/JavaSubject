@@ -1,11 +1,11 @@
 import java.awt.*;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 class EasyPanel extends JPanel {
 	static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8","b9"};
@@ -38,8 +38,8 @@ class EasyPanel extends JPanel {
     ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
 
     ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_0.jpg").getImage());
-    ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_2.jpg").getImage());
-    ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_3.jpg").getImage());
+    ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_1.jpg").getImage());
+    ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_2.jpg").getImage());
     ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_4.jpg").getImage());
     ImagePanel frontJoker = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Joker_4.jpg").getImage());
 
@@ -97,31 +97,22 @@ class EasyPanel extends JPanel {
        }
        
        cardPanel[0].setBounds(140, 10, 60, 80);
-       cardPanel[0].setBackground(new Color(170, 240, 180));
        cardPanel[0].add(back0);
 	   cardPanel[1].setBounds(140+100, 10, 60, 80);
 	   cardPanel[1].add(back1);
-	   cardPanel[1].setBackground(new Color(170, 240, 180));
 	   cardPanel[2].setBounds(140+(100*2), 10, 60, 80);
 	   cardPanel[2].add(back2);
-	   cardPanel[2].setBackground(new Color(170, 240, 180));
 	   cardPanel[3].setBounds(140, 10+180, 60, 80);
-	   cardPanel[3].setBackground(new Color(170, 240, 180));
 	   cardPanel[3].add(back3);
 	   cardPanel[4].setBounds(140+100, 10+180, 60, 80);
-	   cardPanel[4].setBackground(new Color(170, 240, 180));
 	   cardPanel[4].add(back4);
 	   cardPanel[5].setBounds(140+(100*2), 10+180, 60, 80);
-	   cardPanel[5].setBackground(new Color(170, 240, 180));
 	   cardPanel[5].add(back5);
 	   cardPanel[6].setBounds(140, 10+(180*2), 60, 80);
-	   cardPanel[6].setBackground(new Color(170, 240, 180));
 	   cardPanel[6].add(back6);
 	   cardPanel[7].setBounds(140+100, 10+(180*2), 60, 80);
-	   cardPanel[7].setBackground(new Color(170, 240, 180));
 	   cardPanel[7].add(back7);
 	   cardPanel[8].setBounds(140+(100*2), 10+(180*2), 60, 80);
-	   cardPanel[8].setBackground(new Color(170, 240, 180));
 	   cardPanel[8].add(back8);
 	      
 	   for(int i = 0; i < 9; i++)
@@ -159,11 +150,61 @@ class EasyPanel extends JPanel {
     	{
     		isOpen[1] = btnNum;
     		cardBtn[isOpen[1]].setEnabled(false);
+    		if(selectCard[isOpen[1]] == 0)
+    		{
+    			cardPanel[btnNum].add(front0);
+          	  	front0.repaint();
+    		}
+    		else if(selectCard[isOpen[1]] == 1)
+    		{
+    			cardPanel[btnNum].add(front1);
+          	  	front1.repaint();
+    		}
+    		else if(selectCard[isOpen[1]] == 2)
+    		{
+    			cardPanel[btnNum].add(front2);
+          	  	front2.repaint();
+    		}
+    		else if(selectCard[isOpen[1]] == 3)
+    		{
+    			cardPanel[btnNum].add(front3);
+          	  	front3.repaint();
+    		}
+    		else if(selectCard[isOpen[1]] == 3)
+    		{
+    			cardPanel[btnNum].add(frontJoker);
+    			frontJoker.repaint();
+    		}
     	}
     	else
     	{
     		isOpen[0] = btnNum;
     		cardBtn[isOpen[0]].setEnabled(false);
+    		if(selectCard[isOpen[0]] == 0)
+    		{
+    			cardPanel[btnNum].add(front0);
+          	  	front0.repaint();
+    		}
+    		else if(selectCard[isOpen[0]] == 1)
+    		{
+    			cardPanel[btnNum].add(front1);
+          	  	front1.repaint();
+    		}
+    		else if(selectCard[isOpen[0]] == 2)
+    		{
+    			cardPanel[btnNum].add(front2);
+          	  	front2.repaint();
+    		}
+    		else if(selectCard[isOpen[0]] == 3)
+    		{
+    			cardPanel[btnNum].add(front3);
+          	  	front3.repaint();
+    		}
+    		else if(selectCard[isOpen[0]] == 4)
+    		{
+    			cardPanel[btnNum].add(frontJoker);
+    			frontJoker.repaint();
+    		}
     	}
     	
     }
@@ -181,6 +222,98 @@ class EasyPanel extends JPanel {
 			{
 				cardBtn[isOpen[0]].setEnabled(true);
 				cardBtn[isOpen[1]].setEnabled(true);
+				
+				if(isOpen[0] == 0)
+				{
+					cardPanel[0].add(back0);
+					back0.repaint();
+				}
+				else if(isOpen[0] == 1)
+				{
+					cardPanel[1].add(back1);
+					back1.repaint();
+				}
+				else if(isOpen[0] == 2)
+				{
+					cardPanel[2].add(back2);
+					back2.repaint();
+				}
+				else if(isOpen[0] == 3)
+				{
+					cardPanel[3].add(back3);
+					back3.repaint();
+				}
+				else if(isOpen[0] == 4 )
+				{
+					cardPanel[4].add(back4);
+					back4.repaint();
+				}
+				else if(isOpen[0] == 5)
+				{
+					cardPanel[5].add(back5);
+					back5.repaint();
+				}
+				else if(isOpen[0] == 6)
+				{
+					cardPanel[6].add(back6);
+					back6.repaint();
+				}
+				else if(isOpen[0] == 7)
+				{
+					cardPanel[7].add(back7);
+					back7.repaint();
+				}
+				else if(isOpen[0] == 8)
+				{
+					cardPanel[8].add(back8);
+					back8.repaint();
+				}
+				
+				if(isOpen[1] == 0)
+				{
+					cardPanel[0].add(back0);
+					back0.repaint();
+				}
+				else if(isOpen[1] == 1)
+				{
+					cardPanel[1].add(back1);
+					back1.repaint();
+				}
+				else if(isOpen[1] == 2)
+				{
+					cardPanel[2].add(back2);
+					back2.repaint();
+				}
+				else if(isOpen[1] == 3)
+				{
+					cardPanel[3].add(back3);
+					back3.repaint();
+				}
+				else if(isOpen[1] == 4 )
+				{
+					cardPanel[4].add(back4);
+					back4.repaint();
+				}
+				else if(isOpen[1] == 5)
+				{
+					cardPanel[5].add(back5);
+					back5.repaint();
+				}
+				else if(isOpen[1] == 6)
+				{
+					cardPanel[6].add(back6);
+					back6.repaint();
+				}
+				else if(isOpen[1] == 7)
+				{
+					cardPanel[7].add(back7);
+					back7.repaint();
+				}
+				else if(isOpen[1] == 8)
+				{
+					cardPanel[8].add(back8);
+					back8.repaint();
+				}
 			}
 			isOpen[0] = isOpen[1] = -1;
 		}
@@ -206,8 +339,8 @@ class EasyPanel extends JPanel {
           
           if(obj1 == cardBtn[0])
 		   {
-        	  cardPanel[0].add(front0);
-        	  front0.repaint();
+        	  //cardPanel[0].add(front0);
+        	  //front0.repaint();
         	  InputCard(0);
         	  MatchCard();
 		   }
