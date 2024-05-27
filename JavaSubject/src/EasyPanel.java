@@ -11,6 +11,7 @@ class EasyPanel extends JPanel {
 	static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8","b9"};
 	static private JButton[] cardBtn = new JButton[9];
 	static private JPanel[] cardPanel = new JPanel[9];
+	static private JPanel[] cardbackPanel = new JPanel[9];
 	private Card gameCard = new Card();
 	
 	//move to Class Card
@@ -327,7 +328,11 @@ class EasyPanel extends JPanel {
 		}
 		isOpen[0] = isOpen[1] = -1;
 	}
-    
+	
+	public void ResetCardImg()
+	{
+		
+	}
     private class ButtonListener implements ActionListener
     {
        public void actionPerformed(ActionEvent e) {
