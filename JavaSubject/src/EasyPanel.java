@@ -136,15 +136,15 @@ class EasyPanel extends JPanel {
 	   cardBtn[7].setBounds(145+100, 90+(180*2), 50, 30);
 	   cardBtn[8].setBounds(145+200, 90+(180*2), 50, 30);
 	   
-	   selectCard[0] = gameCard.getCardCode1(0, 0);
-	   selectCard[1] = gameCard.getCardCode1(0, 1);
-	   selectCard[2] = gameCard.getCardCode1(0, 2);
-	   selectCard[3] = gameCard.getCardCode1(1, 0);
-	   selectCard[4] = gameCard.getCardCode1(1, 1);
-	   selectCard[5] = gameCard.getCardCode1(1, 2);
-	   selectCard[6] = gameCard.getCardCode1(2, 0); 
-	   selectCard[7] = gameCard.getCardCode1(2, 1);
-	   selectCard[8] = gameCard.getCardCode1(2, 2);
+	   selectCard[0] = gameCard.getCardCode1(0);
+	   selectCard[1] = gameCard.getCardCode1(1);
+	   selectCard[2] = gameCard.getCardCode1(2);
+	   selectCard[3] = gameCard.getCardCode1(3);
+	   selectCard[4] = gameCard.getCardCode1(4);
+	   selectCard[5] = gameCard.getCardCode1(5);
+	   selectCard[6] = gameCard.getCardCode1(6); 
+	   selectCard[7] = gameCard.getCardCode1(7);
+	   selectCard[8] = gameCard.getCardCode1(8);
 	      
     }
     public void InputCard(int btnNum)
