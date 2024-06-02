@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 class EasyPanel extends JPanel {
@@ -13,6 +14,7 @@ class EasyPanel extends JPanel {
 	static private JPanel[] cardPanel = new JPanel[9];
 	static private JPanel[] cardbackPanel = new JPanel[9];
 	private Card gameCard = new Card();
+	private Timer m_timer = new Timer();
 	
 	//move to Class Card
     private int[] selectCard = new int[9];
@@ -224,97 +226,33 @@ class EasyPanel extends JPanel {
 				cardBtn[isOpen[0]].setEnabled(true);
 				cardBtn[isOpen[1]].setEnabled(true);
 				
-				if(isOpen[0] == 0)
-				{
-					cardPanel[0].add(back0);
-					back0.repaint();
-				}
-				else if(isOpen[0] == 1)
-				{
-					cardPanel[1].add(back1);
-					back1.repaint();
-				}
-				else if(isOpen[0] == 2)
-				{
-					cardPanel[2].add(back2);
-					back2.repaint();
-				}
-				else if(isOpen[0] == 3)
-				{
-					cardPanel[3].add(back3);
-					back3.repaint();
-				}
-				else if(isOpen[0] == 4 )
-				{
-					cardPanel[4].add(back4);
-					back4.repaint();
-				}
-				else if(isOpen[0] == 5)
-				{
-					cardPanel[5].add(back5);
-					back5.repaint();
-				}
-				else if(isOpen[0] == 6)
-				{
-					cardPanel[6].add(back6);
-					back6.repaint();
-				}
-				else if(isOpen[0] == 7)
-				{
-					cardPanel[7].add(back7);
-					back7.repaint();
-				}
-				else if(isOpen[0] == 8)
-				{
-					cardPanel[8].add(back8);
-					back8.repaint();
-				}
-				
-				if(isOpen[1] == 0)
-				{
-					cardPanel[0].add(back0);
-					back0.repaint();
-				}
-				else if(isOpen[1] == 1)
-				{
-					cardPanel[1].add(back1);
-					back1.repaint();
-				}
-				else if(isOpen[1] == 2)
-				{
-					cardPanel[2].add(back2);
-					back2.repaint();
-				}
-				else if(isOpen[1] == 3)
-				{
-					cardPanel[3].add(back3);
-					back3.repaint();
-				}
-				else if(isOpen[1] == 4 )
-				{
-					cardPanel[4].add(back4);
-					back4.repaint();
-				}
-				else if(isOpen[1] == 5)
-				{
-					cardPanel[5].add(back5);
-					back5.repaint();
-				}
-				else if(isOpen[1] == 6)
-				{
-					cardPanel[6].add(back6);
-					back6.repaint();
-				}
-				else if(isOpen[1] == 7)
-				{
-					cardPanel[7].add(back7);
-					back7.repaint();
-				}
-				else if(isOpen[1] == 8)
-				{
-					cardPanel[8].add(back8);
-					back8.repaint();
-				}
+				TimerTask m_task = new TimerTask() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						cardPanel[0].add(back0);
+						cardPanel[1].add(back1);
+						cardPanel[2].add(back2);
+						cardPanel[3].add(back3);
+						cardPanel[4].add(back4);
+						cardPanel[5].add(back5);
+						cardPanel[6].add(back6);
+						cardPanel[7].add(back7);
+						cardPanel[8].add(back8);
+						System.out.print("timer");
+						back0.repaint();
+						back1.repaint();
+						back2.repaint();
+						back3.repaint();
+						back4.repaint();
+						back5.repaint();
+						back6.repaint();
+						back7.repaint();
+						back8.repaint();
+					}
+				};
+				m_timer.schedule(m_task, 2000);
 			}
 			isOpen[0] = isOpen[1] = -1;
 		}
