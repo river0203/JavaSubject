@@ -6,8 +6,7 @@ import java.util.List;
 public class Card{
 	// cardCode means cardImage select
 	/// cardState 0 means back, 1 means front
-	private boolean isOpen = false;
-	private boolean isMatch = false;
+	private int gameLife = 3;
 	private Integer[] aryCardCoedEasy = {1, 2, 2, 0, 1, 0, 3, 4, 3};
 	
 	//Constructor
@@ -25,22 +24,9 @@ public class Card{
 	{
 		return aryCardCoedEasy[x];
 	}
-	
-	public boolean getIsOpen()
+	public int getGameLifer()
 	{
-		return isOpen;
-	}
-	public void setIsOpent(boolean value)
-	{
-		isOpen = value;
-	}
-	public boolean getIsMatch()
-	{
-		return isMatch;
-	}
-	public void setIsMatch(boolean value)
-	{
-		isMatch = value;
+		return gameLife;
 	}
 
 	//method
