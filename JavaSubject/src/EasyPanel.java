@@ -13,7 +13,7 @@ class EasyPanel extends JPanel {
 	static private JButton[] cardBtn = new JButton[9];
 	static private JPanel[] cardPanel = new JPanel[9];
 	static private JPanel[] cardbackPanel = new JPanel[9];
-	private Card gameCard = new Card();
+    private Card gameCard = new Card();
 	private Timer m_timer = new Timer();
 	
 	//move to Class Card
@@ -29,6 +29,8 @@ class EasyPanel extends JPanel {
     private JPanel mainPanel;
     private CardLayout cardLayout;
     private ButtonListener btnL;
+    private int presentLife = gameCard.getGameLifer();
+    
     
     ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
     ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
@@ -223,6 +225,11 @@ class EasyPanel extends JPanel {
 			}
 			else
 			{
+				presentLife -=1;
+				if(presentLife == 0)
+				{
+					cardLayout.show(mainPanel,"Home");
+				}
 				cardBtn[isOpen[0]].setEnabled(true);
 				cardBtn[isOpen[1]].setEnabled(true);
 				
@@ -267,10 +274,6 @@ class EasyPanel extends JPanel {
 		isOpen[0] = isOpen[1] = -1;
 	}
 	
-	public void ResetCardImg()
-	{
-		
-	}
     private class ButtonListener implements ActionListener
     {
        public void actionPerformed(ActionEvent e) {
