@@ -18,7 +18,7 @@ class EasyPanel extends JPanel {
 	
 	//move to Class Card
     private int[] selectCard = new int[9];
-    private int[] isOpen = {-1, -1};
+    private int[] openIndex = {-1, -1};
     private boolean isMatch = false;
     private int[] aryOpenCardIndex = {0, 0}; 
 	
@@ -146,31 +146,31 @@ class EasyPanel extends JPanel {
     }
     public void InputCard(int btnNum)
     {
-    	if(isOpen[0] != (-1))
+    	if(openIndex[0] != (-1))
     	{
-    		isOpen[1] = btnNum;
-    		cardBtn[isOpen[1]].setEnabled(false);
-    		if(selectCard[isOpen[1]] == 0)
+    		openIndex[1] = btnNum;
+    		cardBtn[openIndex[1]].setEnabled(false);
+    		if(selectCard[openIndex[1]] == 0)
     		{
     			cardPanel[btnNum].add(front0);
           	  	front0.repaint();
     		}
-    		else if(selectCard[isOpen[1]] == 1)
+    		else if(selectCard[openIndex[1]] == 1)
     		{
     			cardPanel[btnNum].add(front1);
           	  	front1.repaint();
     		}
-    		else if(selectCard[isOpen[1]] == 2)
+    		else if(selectCard[openIndex[1]] == 2)
     		{
     			cardPanel[btnNum].add(front2);
           	  	front2.repaint();
     		}
-    		else if(selectCard[isOpen[1]] == 3)
+    		else if(selectCard[openIndex[1]] == 3)
     		{
     			cardPanel[btnNum].add(front3);
           	  	front3.repaint();
     		}
-    		else if(selectCard[isOpen[1]] == 3)
+    		else if(selectCard[openIndex[1]] == 3)
     		{
     			cardPanel[btnNum].add(frontJoker);
     			frontJoker.repaint();
@@ -178,29 +178,29 @@ class EasyPanel extends JPanel {
     	}
     	else
     	{
-    		isOpen[0] = btnNum;
-    		cardBtn[isOpen[0]].setEnabled(false);
-    		if(selectCard[isOpen[0]] == 0)
+    		openIndex[0] = btnNum;
+    		cardBtn[openIndex[0]].setEnabled(false);
+    		if(selectCard[openIndex[0]] == 0)
     		{
     			cardPanel[btnNum].add(front0);
           	  	front0.repaint();
     		}
-    		else if(selectCard[isOpen[0]] == 1)
+    		else if(selectCard[openIndex[0]] == 1)
     		{
     			cardPanel[btnNum].add(front1);
           	  	front1.repaint();
     		}
-    		else if(selectCard[isOpen[0]] == 2)
+    		else if(selectCard[openIndex[0]] == 2)
     		{
     			cardPanel[btnNum].add(front2);
           	  	front2.repaint();
     		}
-    		else if(selectCard[isOpen[0]] == 3)
+    		else if(selectCard[openIndex[0]] == 3)
     		{
     			cardPanel[btnNum].add(front3);
           	  	front3.repaint();
     		}
-    		else if(selectCard[isOpen[0]] == 4)
+    		else if(selectCard[openIndex[0]] == 4)
     		{
     			cardPanel[btnNum].add(frontJoker);
     			frontJoker.repaint();
@@ -210,13 +210,13 @@ class EasyPanel extends JPanel {
     }
 	public void MatchCard()
 	{
-		if(isOpen[0] != (-1) && isOpen[1] != (-1))
+		if(openIndex[0] != (-1) && openIndex[1] != (-1))
 		{
-			if(selectCard[isOpen[0]] == selectCard[isOpen[1]])
+			if(selectCard[openIndex[0]] == selectCard[openIndex[1]])
 			{
 				System.out.print("Match ");
-				cardBtn[isOpen[0]].setEnabled(false);
-				cardBtn[isOpen[1]].setEnabled(false);
+				cardBtn[openIndex[0]].setEnabled(false);
+				cardBtn[openIndex[1]].setEnabled(false);
 			}
 			else
 			{
@@ -225,8 +225,8 @@ class EasyPanel extends JPanel {
 				{
 					cardLayout.show(mainPanel,"Home");
 				}
-				cardBtn[isOpen[0]].setEnabled(true);
-				cardBtn[isOpen[1]].setEnabled(true);
+				cardBtn[openIndex[0]].setEnabled(true);
+				cardBtn[openIndex[1]].setEnabled(true);
 				
 				TimerTask m_task = new TimerTask() {
 
@@ -256,7 +256,7 @@ class EasyPanel extends JPanel {
 				};
 				m_timer.schedule(m_task, 2000);
 			}
-			isOpen[0] = isOpen[1] = -1;
+			openIndex[0] = openIndex[1] = -1;
 		}
     }
 	
@@ -266,7 +266,7 @@ class EasyPanel extends JPanel {
 		{
 			cardBtn[i].setEnabled(true);
 		}
-		isOpen[0] = isOpen[1] = -1;
+		openIndex[0] = openIndex[1] = -1;
 	}
 	
     private class ButtonListener implements ActionListener
