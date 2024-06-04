@@ -4,38 +4,39 @@ import java.util.Collections;
 import java.util.List;
 
 public class Card{
-	// cardCode means cardImage select
-	/// cardState 0 means back, 1 means front
 	private int gameLife = 3;
 	private Integer[] aryCardCoedEasy = {1, 2, 2, 0, 1, 0, 3, 4, 3};
 	private Integer[] aryCardCoedRegular = {0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3};
+	private Integer[] aryCardCodeHard = {0, 1, 2, 3, 0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7};
 	
 	//Constructor
 	public Card()
 	{
-		List<Integer> list =Arrays.asList(aryCardCoedEasy);
-        System.out.println("랜덤 정렬 전 : " + Arrays.toString(aryCardCoedEasy));
-        
+		List<Integer> list =Arrays.asList(aryCardCoedEasy);              
         Collections.shuffle(list);
-        list.toArray(aryCardCoedEasy);
-        System.out.println("랜덤 정렬 후 : " + Arrays.toString(aryCardCoedEasy));
-        
-        List<Integer> listRegular = Arrays.asList(aryCardCoedRegular);
-        System.out.println("랜덤 정렬 전 (Regular) : " + Arrays.toString(aryCardCoedRegular));
-
+        list.toArray(aryCardCoedEasy);               
+        List<Integer> listRegular = Arrays.asList(aryCardCoedRegular);        
         Collections.shuffle(listRegular);
-        listRegular.toArray(aryCardCoedRegular);
-        System.out.println("랜덤 정렬 후 (Regular) : " + Arrays.toString(aryCardCoedRegular));
+        listRegular.toArray(aryCardCoedRegular);                
+        List<Integer> listHard = Arrays.asList(aryCardCodeHard);        
+        Collections.shuffle(listHard);
+        listHard.toArray(aryCardCodeHard);
 	}
 	//getter&setter
 	public int getCardCode1(int x, String difficulty) {
         if (difficulty.equals("easy")) 
         {
             return aryCardCoedEasy[x];
-        } else if (difficulty.equals("regular")) 
+        } 
+        else if (difficulty.equals("regular")) 
         {
             return aryCardCoedRegular[x];
-        } else 
+        } 
+        else if (difficulty.equals("hard")) 
+        {
+            return aryCardCoedRegular[x];
+        } 
+        else 
         {
             throw new IllegalArgumentException("Invalid difficulty level");
         }
@@ -45,4 +46,8 @@ public class Card{
 	{
 		return gameLife;
 	}
+	public void setLife(int life) 
+	{
+        this.gameLife = life;
+     }
 }
