@@ -28,24 +28,24 @@ class RegularPanel extends JPanel
     private ButtonListener btnL;
     private int presentLife = gameCard.getGameLifer();
     
-    ImagePanel back0 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back1 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back2 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back3 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back4 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back5 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back6 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back7 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back8 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back9 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back10 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back11 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
-   ImagePanel back12 = new ImagePanel(new ImageIcon("./src/Images/Regular_back.jpg").getImage());
+    ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+   ImagePanel back12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
        
-   ImagePanel front0 = new ImagePanel(new ImageIcon("./src/Images/Regular_apple.jpg").getImage());
-   ImagePanel front1 = new ImagePanel(new ImageIcon("./src/Images/Regular_grape.jpg").getImage());
-   ImagePanel front2 = new ImagePanel(new ImageIcon("./src/Images/Regular_peach.jpg").getImage());
-   ImagePanel front3 = new ImagePanel(new ImageIcon("./src/Images/Regular_watermelon.jpg").getImage());
+   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_0.jpg").getImage());
+   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_1.jpg").getImage());
+   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_2.jpg").getImage());
+   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_4.jpg").getImage());
       
    
     public RegularPanel(JPanel mainPanel,CardLayout cardLayout ) 
@@ -90,6 +90,7 @@ class RegularPanel extends JPanel
        btnHint.setBounds(450, 60, 100, 50);
        btnHint.setFont(new Font("Verana", Font.BOLD, 20));
        btnHint.setBackground(new Color(250, 239, 110));
+       btnHint.addActionListener(btnL);
        topPanel.add(btnHint);
        
        for(int i = 0; i < 12; i++)
@@ -148,11 +149,40 @@ class RegularPanel extends JPanel
          cardBtn[10].setBounds(298, 450, 50, 30);
          cardBtn[11].setBounds(388, 450, 50, 30);  
          
-         for (int i = 0; i < 12; i++) {
+         for (int i = 0; i < 12; i++) 
+         {
                selectCard[i] = gameCard.getCardCode1(i, "regular");
-           }
+         }
          
    }
+    
+    public void OpenCard()
+    {
+    	for (int i = 0; i < 12; i++) 
+        {
+    		if(selectCard[i] == 0)
+    		{
+    			 cardPanel[i].add(front0);
+                 front0.repaint();
+    		}
+    		else if(selectCard[i] == 1)
+    		{
+    			cardPanel[i].add(front1);
+                front1.repaint();
+    		}
+    		else if(selectCard[i] == 2)
+    		{
+    			cardPanel[i].add(front2);
+                front2.repaint();
+    		}
+    		else if(selectCard[i] == 3)
+    		{
+    			cardPanel[i].add(front3);
+                front3.repaint();
+    		}
+              
+        }
+    }
    
     public void InputCard(int btnNum) {
          if(openIndex[0] != (-1))
@@ -282,7 +312,12 @@ class RegularPanel extends JPanel
                       ResetCardBtn();
                       cardLayout.show(mainPanel, "Home");
                   } 
-                  for (int i = 0; i < cardBtn.length; i++) {
+                  if(obj1 ==  btnHint)
+                  {
+                	  OpenCard();
+                  }
+                  for (int i = 0; i < cardBtn.length; i++) 
+                  {
                       if (obj1 == cardBtn[i]) {
                           InputCard(i);
                           MatchCard();

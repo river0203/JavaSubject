@@ -32,19 +32,19 @@ class EasyPanel extends JPanel {
     private int presentLife = gameCard.getGameLifer();
     
     
-    ImagePanel back0 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back1 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back2 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back3 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back4 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back5 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back6 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
-    ImagePanel back7 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/easyback.jpeg").getImage());
+    ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
     
-    ImagePanel front0 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/square.jpeg").getImage());
-    ImagePanel front1 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/triangle.jpeg").getImage());
-    ImagePanel front2 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/circle.jpeg").getImage());
-    ImagePanel front3 = new ImagePanel(new ImageIcon("/Users/kimdongmin/Desktop/Team/heart.jpeg").getImage());
+    ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_0.jpg").getImage());
+    ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_1.jpg").getImage());
+    ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_2.jpg").getImage());
+    ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_4.jpg").getImage());
     
 
     public EasyPanel(JPanel mainPanel, CardLayout cardLayout){
@@ -99,6 +99,7 @@ class EasyPanel extends JPanel {
        btnHint.setBounds(450, 60, 100, 50);
        btnHint.setFont(new Font("Verdana", Font.BOLD, 19));
        btnHint.setBackground(new Color(255,199,199));
+       btnHint.addActionListener(btnL);
        topPanel.add(btnHint);
        
        //카드 부분 코드를 bottomPanel여기에 넣어야 함.
@@ -191,9 +192,61 @@ class EasyPanel extends JPanel {
  	  front3.repaint();
 	      
     }
+    
     public void OpenCard()
-    {
+    {	
+    	for(int i = 0; i < 8; i++) 
+    	{
+    		 cardPanel[i].setVisible(true);
+   		  if(selectCard[i] == 0) {
+   			  cardPanel[i].add(front0);
+   			  front0.repaint();
+   			  System.out.print("1 ");
+   		  }
+   		  else if(selectCard[i] == 1) {
+   			  cardPanel[i].add(front1);
+   			  front1.repaint();
+   			System.out.print("2 ");
+   		  }
+   		  else if(selectCard[i] == 2) {
+   			  cardPanel[i].add(front2);
+   			  front2.repaint();
+   			System.out.print("3 ");
+   		  }
+   		  else if(selectCard[i] == 3) {
+   			  cardPanel[i].add(front3);
+   			  front3.repaint();
+   			System.out.print("4 ");
+   		  }
+   	  }
     	
+    	
+    	TimerTask m_task = new TimerTask() {
+    		
+            @Override
+            public void run() {
+               // TODO Auto-generated method stub
+               cardPanel[0].add(back0);
+               cardPanel[1].add(back1);
+               cardPanel[2].add(back2);
+               cardPanel[3].add(back3);
+               cardPanel[4].add(back4);
+               cardPanel[5].add(back5);
+               cardPanel[6].add(back6);
+               cardPanel[7].add(back7);
+               
+               System.out.print("timer2 ");
+               back0.repaint();
+               back1.repaint();
+               back2.repaint();
+               back3.repaint();
+               back4.repaint();
+               back5.repaint();
+               back6.repaint();
+               back7.repaint();
+            }
+         };
+         m_timer.schedule(m_task, 2000);
     }
     
     public void InputCard(int btnNum)
@@ -374,12 +427,12 @@ class EasyPanel extends JPanel {
           }
           
           if(obj1 == btnHint) {
-        	  
+        	  OpenCard();
+        	 System.out.print("hint ");
         	  
           }
           if(obj1 == cardBtn[0])
 		   {
-        	  
         	  InputCard(0);
         	  MatchCard();
 		   }
