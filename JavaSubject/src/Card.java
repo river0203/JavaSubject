@@ -18,7 +18,7 @@ public class Card{
         List<Integer> listRegular = Arrays.asList(aryCardCoedRegular);        
         Collections.shuffle(listRegular);
         listRegular.toArray(aryCardCoedRegular);                
-        List<Integer> listHard = Arrays.asList(aryCardCodeHard);        
+        List<Integer> listHard = Arrays.asList(aryCardCodeHard);    
         Collections.shuffle(listHard);
         listHard.toArray(aryCardCodeHard);
 	}
@@ -32,9 +32,9 @@ public class Card{
         {
             return aryCardCoedRegular[x];
         } 
-        else if (difficulty.equals("hard")) 
+        else if (difficulty.equals("Hard")) 
         {
-            return aryCardCoedRegular[x];
+            return aryCardCodeHard[x];
         } 
         else 
         {

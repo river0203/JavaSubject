@@ -169,10 +169,10 @@ class HardPanel extends JPanel
       cardBtn[14].setBounds(300, 450, 60, 30);
       cardBtn[15].setBounds(400, 450, 60, 30);
    
-       for (int i = 0; i < 12; i++) {
-           selectCard[i] = gameCard.getCardCode1(i, "hard");
-       }
-
+      for (int i = 0; i < 16; i++) 
+      {
+          selectCard[i] = gameCard.getCardCode1(i, "Hard");
+      }
    }
    
    public void InputCard(int btnNum) {

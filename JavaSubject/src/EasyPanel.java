@@ -191,6 +191,11 @@ class EasyPanel extends JPanel {
  	  front3.repaint();
 	      
     }
+    public void OpenCard()
+    {
+    	
+    }
+    
     public void InputCard(int btnNum)
     {
     	if(openIndex[0] != (-1))
