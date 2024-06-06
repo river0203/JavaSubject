@@ -193,62 +193,6 @@ class EasyPanel extends JPanel {
 	      
     }
     
-    public void OpenCard()
-    {	
-    	for(int i = 0; i < 8; i++) 
-    	{
-    		 cardPanel[i].setVisible(true);
-   		  if(selectCard[i] == 0) {
-   			  cardPanel[i].add(front0);
-   			  front0.repaint();
-   			  System.out.print("1 ");
-   		  }
-   		  else if(selectCard[i] == 1) {
-   			  cardPanel[i].add(front1);
-   			  front1.repaint();
-   			System.out.print("2 ");
-   		  }
-   		  else if(selectCard[i] == 2) {
-   			  cardPanel[i].add(front2);
-   			  front2.repaint();
-   			System.out.print("3 ");
-   		  }
-   		  else if(selectCard[i] == 3) {
-   			  cardPanel[i].add(front3);
-   			  front3.repaint();
-   			System.out.print("4 ");
-   		  }
-   	  }
-    	
-    	
-    	TimerTask m_task = new TimerTask() {
-    		
-            @Override
-            public void run() {
-               // TODO Auto-generated method stub
-               cardPanel[0].add(back0);
-               cardPanel[1].add(back1);
-               cardPanel[2].add(back2);
-               cardPanel[3].add(back3);
-               cardPanel[4].add(back4);
-               cardPanel[5].add(back5);
-               cardPanel[6].add(back6);
-               cardPanel[7].add(back7);
-               
-               System.out.print("timer2 ");
-               back0.repaint();
-               back1.repaint();
-               back2.repaint();
-               back3.repaint();
-               back4.repaint();
-               back5.repaint();
-               back6.repaint();
-               back7.repaint();
-            }
-         };
-         m_timer.schedule(m_task, 2000);
-    }
-    
     public void InputCard(int btnNum)
     {
     	if(openIndex[0] != (-1))
@@ -388,6 +332,35 @@ class EasyPanel extends JPanel {
 		}
     }
 	
+	public void end()
+	{
+		if(cardBtn[0].isEnabled() == false  && cardBtn[1].isEnabled() == false && cardBtn[2].isEnabled() == false && cardBtn[3].isEnabled() == false && cardBtn[4].isEnabled() == false && cardBtn[5].isEnabled() == false && cardBtn[6].isEnabled() == false && cardBtn[7].isEnabled() == false ) {
+			presentLife= 3;
+			cardPanel[0].setVisible(false);
+      	    cardPanel[1].setVisible(false);
+			cardPanel[2].setVisible(false);
+			cardPanel[3].setVisible(false);
+			cardPanel[4].setVisible(false);
+			cardPanel[5].setVisible(false);
+			cardPanel[6].setVisible(false);
+			cardPanel[7].setVisible(false);
+			  
+			cardbackPanel[0].setVisible(true);
+			cardbackPanel[1].setVisible(true);
+			cardbackPanel[2].setVisible(true);
+			cardbackPanel[3].setVisible(true);
+			cardbackPanel[4].setVisible(true);
+			cardbackPanel[5].setVisible(true);
+			cardbackPanel[6].setVisible(true);
+			cardbackPanel[7].setVisible(true);
+			ResetCardBtn();
+      	    lblLife.setText(Integer.toString(presentLife));
+
+			cardLayout.show(mainPanel,"Home");
+		}
+	}
+
+	
 	public void ResetCardBtn()
 	{
 		for(int i = 0; i < 8; i++)
@@ -427,7 +400,7 @@ class EasyPanel extends JPanel {
           }
           
           if(obj1 == btnHint) {
-        	  OpenCard();
+        	  
         	 System.out.print("hint ");
         	  
           }
@@ -435,43 +408,51 @@ class EasyPanel extends JPanel {
 		   {
         	  InputCard(0);
         	  MatchCard();
+        	  end();
 		   }
 		   if(obj1 == cardBtn[1])
 		   {
 			   InputCard(1);
 			   MatchCard();
+			   end();
 		   }
 		   if(obj1 == cardBtn[2])
 		   {
 			   InputCard(2);
 			   MatchCard();
+			   end();
 		   }
 		   
 		   if(obj1 == cardBtn[3])
 		   {
 			   InputCard(3);
 			   MatchCard();
+			   end();
 		   }
 		   if(obj1 == cardBtn[4])
 		   {
 			   InputCard(4);
 			   MatchCard();
+			   end();
 		   }
 		   if(obj1 == cardBtn[5])
 		   {
 			   InputCard(5);
 			   MatchCard();
+			   end();
 		   }
 		   
 		   if(obj1 == cardBtn[6])
 		   {
 			   InputCard(6);
 			   MatchCard();
+			   end();
 		   }
 		   if(obj1 == cardBtn[7])
 		   {
 			   InputCard(7);
 			   MatchCard();
+			   end();
 		   }
 		   
 
