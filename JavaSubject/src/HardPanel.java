@@ -198,28 +198,6 @@ class HardPanel extends JPanel
       cardBtn[13].setBounds(200, 450, 60, 30);
       cardBtn[14].setBounds(300, 450, 60, 30);
       cardBtn[15].setBounds(400, 450, 60, 30);
-   
-      /*   
-      selectCard[0] = gameCard.getCardCode1(0);
-      selectCard[1] = gameCard.getCardCode1(1);
-      selectCard[2] = gameCard.getCardCode1(2);
-      selectCard[3] = gameCard.getCardCode1(3);
-      
-      selectCard[4] = gameCard.getCardCode1(4);
-      selectCard[5] = gameCard.getCardCode1(5);
-      selectCard[6] = gameCard.getCardCode1(6); 
-      selectCard[7] = gameCard.getCardCode1(7);
-      
-      selectCard[8] = gameCard.getCardCode1(8);
-      selectCard[9] = gameCard.getCardCode1(9);
-      selectCard[10] = gameCard.getCardCode1(10);
-      selectCard[11] = gameCard.getCardCode1(11);
-      
-      selectCard[12] = gameCard.getCardCode1(12);
-      selectCard[13] = gameCard.getCardCode1(13);
-      selectCard[14] = gameCard.getCardCode1(14);
-      selectCard[15] = gameCard.getCardCode1(15); 
-      */
       
        for (int i = 0; i < 16; i++) {
            selectCard[i] = gameCard.getCardCode1(i, "Hard");
@@ -299,9 +277,6 @@ class HardPanel extends JPanel
    }
    
    public void InputCard(int btnNum) {
-         
-         //isOpen[1] = btnNum;
-         //cardBtn[isOpen[1]].setEnabled(false);
          if(openIndex[0] != (-1))
           {
              openIndex[1] = btnNum;

@@ -17,8 +17,6 @@ class EasyPanel extends JPanel {
 	private Timer m_timer = new Timer();
 	private Timer n_timer = new Timer();
 	
-	
-	//move to Class Card
     private int[] selectCard = new int[8];
     private int[] openIndex = {-1, -1};
     private boolean isMatch = false;
@@ -109,9 +107,6 @@ class EasyPanel extends JPanel {
        btnHint.setBackground(new Color(255,199,199));
        btnHint.addActionListener(btnL);
        topPanel.add(btnHint);
-       
-       //카드 부분 코드를 bottomPanel여기에 넣어야 함.
-       //패널안에 들어가는 지 위치 확인하려면 바탕 색을 화이트에서 다른 색 넣어서 확인해보기.
        
        for(int i = 0; i < 8; i++)
        {
@@ -304,10 +299,6 @@ class EasyPanel extends JPanel {
 				System.out.print("Match ");
 				cardBtn[openIndex[0]].setEnabled(false);
 				cardBtn[openIndex[1]].setEnabled(false);
-				/*cardbackPanel[isOpen[0]].setVisible(false);
-				cardbackPanel[isOpen[1]].setVisible(false);
-				cardPanel[isOpen[0]].setVisible(true);
-				cardPanel[isOpen[1]].setVisible(true);*/
 			}
 			else
 			{

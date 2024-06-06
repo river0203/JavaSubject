@@ -17,8 +17,7 @@ class RegularPanel extends JPanel
    private Card gameCard = new Card();
    private Timer m_timer = new Timer();
    private Timer n_timer = new Timer();
-   
-   //move to Class Card
+
    private int[] selectCard = new int[12];
    private int[] openIndex = {-1, -1};
    private boolean isMatch = false;
