@@ -1,0 +1,1 @@
+EasyPanel, RegularPanel, HardPanel, Home Panel에 이미지 경로를 너어주셔야 이미지가 출력됩니다. 프로젝트 안에 Image라는 곳에 저장되어있고 따로 폴더에 이미지 리소스에도 이미지가 있습니다.
