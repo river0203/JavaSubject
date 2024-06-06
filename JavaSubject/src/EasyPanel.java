@@ -404,56 +404,14 @@ class EasyPanel extends JPanel {
         	 System.out.print("hint ");
         	  
           }
-          if(obj1 == cardBtn[0])
-		   {
-        	  InputCard(0);
-        	  MatchCard();
-        	  end();
-		   }
-		   if(obj1 == cardBtn[1])
-		   {
-			   InputCard(1);
-			   MatchCard();
-			   end();
-		   }
-		   if(obj1 == cardBtn[2])
-		   {
-			   InputCard(2);
-			   MatchCard();
-			   end();
-		   }
-		   
-		   if(obj1 == cardBtn[3])
-		   {
-			   InputCard(3);
-			   MatchCard();
-			   end();
-		   }
-		   if(obj1 == cardBtn[4])
-		   {
-			   InputCard(4);
-			   MatchCard();
-			   end();
-		   }
-		   if(obj1 == cardBtn[5])
-		   {
-			   InputCard(5);
-			   MatchCard();
-			   end();
-		   }
-		   
-		   if(obj1 == cardBtn[6])
-		   {
-			   InputCard(6);
-			   MatchCard();
-			   end();
-		   }
-		   if(obj1 == cardBtn[7])
-		   {
-			   InputCard(7);
-			   MatchCard();
-			   end();
-		   }
+          for (int i = 0; i < cardBtn.length; i++) 
+          {
+              if (obj1 == cardBtn[i]) {
+                  InputCard(i);
+                  MatchCard();
+                  end();
+              }
+          }
 		   
 
        }

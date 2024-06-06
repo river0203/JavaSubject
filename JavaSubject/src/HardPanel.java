@@ -35,41 +35,41 @@ class HardPanel extends JPanel
    private ButtonListener btnL;
    private int presentLife = 5;  //gameCard.getGameLifer();
    
-   ImagePanel back0 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back1 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back2 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back3 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back4 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back5 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back6 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back7 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back8 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back9 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back10 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back11 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back12 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back13 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back14 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
-   ImagePanel back15 = new ImagePanel(new ImageIcon("./src/image/hardPanel.jpg").getImage());
+   ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back13 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back14 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
+   ImagePanel back15 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_back.jpg").getImage());
 
    
 
-   ImagePanel front0 = new ImagePanel(new ImageIcon("./src/image/angry.jpg").getImage());
-   ImagePanel front1 = new ImagePanel(new ImageIcon("./src/image/happy.jpg").getImage());
-   ImagePanel front2 = new ImagePanel(new ImageIcon("./src/image/oh.jpg").getImage());
-   ImagePanel front3 = new ImagePanel(new ImageIcon("./src/image/sorry.jpg").getImage());
-   ImagePanel front4 = new ImagePanel(new ImageIcon("./src/image/haha.jpg").getImage());
-   ImagePanel front5 = new ImagePanel(new ImageIcon("./src/image/ap.jpg").getImage());
-   ImagePanel front6 = new ImagePanel(new ImageIcon("./src/image/um.jpg").getImage());
-   ImagePanel front7 = new ImagePanel(new ImageIcon("./src/image/find.jpg").getImage());
-   ImagePanel front8 = new ImagePanel(new ImageIcon("./src/image/angry.jpg").getImage());
-   ImagePanel front9 = new ImagePanel(new ImageIcon("./src/image/happy.jpg").getImage());
-   ImagePanel front10 = new ImagePanel(new ImageIcon("./src/image/oh.jpg").getImage());
-   ImagePanel front11 = new ImagePanel(new ImageIcon("./src/image/sorry.jpg").getImage());
-   ImagePanel front12 = new ImagePanel(new ImageIcon("./src/image/haha.jpg").getImage());
-   ImagePanel front13 = new ImagePanel(new ImageIcon("./src/image/ap.jpg").getImage());
-   ImagePanel front14 = new ImagePanel(new ImageIcon("./src/image/um.jpg").getImage());
-   ImagePanel front15 = new ImagePanel(new ImageIcon("./src/image/find.jpg").getImage());
+   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
+   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
+   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
+   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
+   ImagePanel front4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
+   ImagePanel front5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
+   ImagePanel front6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
+   ImagePanel front7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
+   ImagePanel front8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
+   ImagePanel front9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
+   ImagePanel front10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
+   ImagePanel front11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
+   ImagePanel front12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
+   ImagePanel front13 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
+   ImagePanel front14 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_7.jpg").getImage());
+   ImagePanel front15 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_7.jpg").getImage());
 
 
    
@@ -123,6 +123,7 @@ class HardPanel extends JPanel
       btnHint.setBounds(450,60,100,50);
       btnHint.setFont(new Font("Verdana",Font.BOLD,20));
       btnHint.setBackground(new Color(176,224,230));
+      btnHint.addActionListener(btnL);
       topPanel.add(btnHint);
       
    
@@ -287,64 +288,6 @@ class HardPanel extends JPanel
                      front7.repaint();
                     cardPanel[btnNum].setVisible(true);
              }
-             /*
-             else if(selectCard[isOpen[1]] == 8)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front8);
-                     front8.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 9)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front9);
-                     front9.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 10)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front10);
-                     front10.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 11)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front11);
-                     front11.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 12)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front12);
-                     front12.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 13)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front13);
-                     front13.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 14)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front14);
-                     front14.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             else if(selectCard[isOpen[1]] == 15)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front15);
-                     front15.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }*/
-      
           }
           else
           {
@@ -406,51 +349,6 @@ class HardPanel extends JPanel
                      front15.repaint();
                     cardPanel[btnNum].setVisible(true);
              }
-             /*
-             else if(selectCard[isOpen[0]] == 8)
-             {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front9);
-                     front9.repaint();
-                    cardPanel[btnNum].setVisible(true);
-             }
-             
-             else if(selectCard[isOpen[0]] == 9)
-             {
-                cardPanel[btnNum].add(front9);
-                     front9.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 10)
-             {
-                cardPanel[btnNum].add(front10);
-                     front10.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 11)
-             {
-                cardPanel[btnNum].add(front11);
-                     front11.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 12)
-             {
-                cardPanel[btnNum].add(front12);
-                     front12.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 13)
-             {
-                cardPanel[btnNum].add(front13);
-                     front13.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 14)
-             {
-                cardPanel[btnNum].add(front14);
-                     front14.repaint();
-             }
-             else if(selectCard[isOpen[0]] == 15)
-             {
-                cardPanel[btnNum].add(front15);
-                     front15.repaint();
-             }
-              */
           }
        }
 
@@ -489,21 +387,17 @@ class HardPanel extends JPanel
                public void run() {
                   // TODO Auto-generated method stub
                   
-                  for(int i = 0; i < 16; i++) {
+                  for(int i = 0; i < 16; i++) 
+                  {
                      if(cardBtn[i].isEnabled() == true )
                      {
                         cardPanel[i].setVisible(false);
                      }
                      
                   }
-                  
-                  
-                  
-                  
-                  
-                  System.out.print("timer");
-                  
-                  for(int i = 0; i < 16; i++) {
+                        System.out.print("timer");
+                  for(int i = 0; i < 16; i++) 
+                  {
                      if(cardBtn[i].isEnabled() == true )
                      {
                         cardbackPanel[i].setVisible(true);
@@ -624,105 +518,14 @@ class HardPanel extends JPanel
              
              
           }
-          if(obj1 == cardBtn[0])
-         {
-             
-             InputCard(0);
-             MatchCard();
-             end();
-         }
-         if(obj1 == cardBtn[1])
-         {
-            InputCard(1);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[2])
-         {
-            InputCard(2);
-            MatchCard();
-            end();
-         }
-         
-         if(obj1 == cardBtn[3])
-         {
-            InputCard(3);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[4])
-         {
-            InputCard(4);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[5])
-         {
-            InputCard(5);
-            MatchCard();
-            end();
-         }
-         
-         if(obj1 == cardBtn[6])
-         {
-            InputCard(6);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[7])
-         {
-            InputCard(7);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[8])
-         {
-            InputCard(8);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[9])
-         {
-            InputCard(9);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[10])
-         {
-            InputCard(10);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[11])
-         {
-            InputCard(11);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[12])
-         {
-            InputCard(12);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[13])
-         {
-            InputCard(13);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[14])
-         {
-            InputCard(14);
-            MatchCard();
-            end();
-         }
-         if(obj1 == cardBtn[15])
-         {
-            InputCard(15);
-            MatchCard();
-            end();
-         }
+          for (int i = 0; i < cardBtn.length; i++) 
+          {
+              if (obj1 == cardBtn[i]) {
+                  InputCard(i);
+                  MatchCard();
+                  end();
+              }
+          }
 
        }
     }      

@@ -21,31 +21,31 @@ class RegularPanel extends JPanel
       
    private ImagePanel imagePanel;
    private JPanel topPanel, bottomPanel;
-   private JLabel lblTitle;
+   private JLabel lblTitle,lblLife, lblLife2;
    private JButton btnHome, btnHint;
    private JPanel mainPanel;
    private CardLayout cardLayout;
     private ButtonListener btnL;
-    private int presentLife = gameCard.getGameLifer();
+    private int presentLife = 4;
     
-    ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
-   ImagePanel back12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
+    ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
+   ImagePanel back12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_back.jpg").getImage());
        
-   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_0.jpg").getImage());
-   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_1.jpg").getImage());
-   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_2.jpg").getImage());
-   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1_4.jpg").getImage());
+   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Leve2_0.jpg").getImage());
+   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_1.jpg").getImage());
+   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_2.jpg").getImage());
+   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level2_3.jpg").getImage());
       
    
     public RegularPanel(JPanel mainPanel,CardLayout cardLayout ) 
@@ -71,7 +71,18 @@ class RegularPanel extends JPanel
        bottomPanel.setLayout(null);
        add(bottomPanel);
 
-      
+       lblLife = new JLabel();
+       lblLife.setText(Integer.toString(presentLife));
+       lblLife.setBounds(510,100,100,50);
+       lblLife.setFont(new Font("Verdana", Font.BOLD, 19));
+       lblLife.setBackground(new Color(255,199,199));
+       topPanel.add(lblLife);
+       
+       lblLife2 = new JLabel("Life : ");
+       lblLife2.setBounds(450,100,100,50);
+       lblLife2.setFont(new Font("Verdana", Font.BOLD, 19));
+       topPanel.add(lblLife2);
+       
        lblTitle = new JLabel("REGULAR LEVEL");
        lblTitle.setBounds(200, 10, 200, 50);
        lblTitle.setFont(new Font("Verdana", Font.BOLD, 24));
@@ -156,33 +167,7 @@ class RegularPanel extends JPanel
          
    }
     
-    public void OpenCard()
-    {
-    	for (int i = 0; i < 12; i++) 
-        {
-    		if(selectCard[i] == 0)
-    		{
-    			 cardPanel[i].add(front0);
-                 front0.repaint();
-    		}
-    		else if(selectCard[i] == 1)
-    		{
-    			cardPanel[i].add(front1);
-                front1.repaint();
-    		}
-    		else if(selectCard[i] == 2)
-    		{
-    			cardPanel[i].add(front2);
-                front2.repaint();
-    		}
-    		else if(selectCard[i] == 3)
-    		{
-    			cardPanel[i].add(front3);
-                front3.repaint();
-    		}
-              
-        }
-    }
+    
    
     public void InputCard(int btnNum) {
          if(openIndex[0] != (-1))
@@ -293,7 +278,35 @@ class RegularPanel extends JPanel
                openIndex[0] = openIndex[1] = -1;
              }
            }
-          
+    
+    public void end()
+	{
+		if(cardBtn[0].isEnabled() == false  && cardBtn[1].isEnabled() == false && cardBtn[2].isEnabled() == false && cardBtn[3].isEnabled() == false && cardBtn[4].isEnabled() == false && cardBtn[5].isEnabled() == false && cardBtn[6].isEnabled() == false && cardBtn[7].isEnabled() == false ) {
+			presentLife= 3;
+			cardPanel[0].setVisible(false);
+      	    cardPanel[1].setVisible(false);
+			cardPanel[2].setVisible(false);
+			cardPanel[3].setVisible(false);
+			cardPanel[4].setVisible(false);
+			cardPanel[5].setVisible(false);
+			cardPanel[6].setVisible(false);
+			cardPanel[7].setVisible(false);
+			  
+			cardbackPanel[0].setVisible(true);
+			cardbackPanel[1].setVisible(true);
+			cardbackPanel[2].setVisible(true);
+			cardbackPanel[3].setVisible(true);
+			cardbackPanel[4].setVisible(true);
+			cardbackPanel[5].setVisible(true);
+			cardbackPanel[6].setVisible(true);
+			cardbackPanel[7].setVisible(true);
+			ResetCardBtn();
+      	    lblLife.setText(Integer.toString(presentLife));
+
+			cardLayout.show(mainPanel,"Home");
+		}
+	}
+    
           public void ResetCardBtn()
           {
              for(int i = 0; i < 12; i++)
@@ -314,13 +327,14 @@ class RegularPanel extends JPanel
                   } 
                   if(obj1 ==  btnHint)
                   {
-                	  OpenCard();
+                	  
                   }
                   for (int i = 0; i < cardBtn.length; i++) 
                   {
                       if (obj1 == cardBtn[i]) {
                           InputCard(i);
                           MatchCard();
+                          end();
                       }
                   }
               }
