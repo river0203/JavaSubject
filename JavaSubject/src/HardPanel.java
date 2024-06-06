@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
-
 class HardPanel extends JPanel
 {
    static private String[] btnTxt = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "b11", "b12", "b13", "b14", "b15", "b16"};
@@ -19,16 +18,16 @@ class HardPanel extends JPanel
     
    private Card gameCard = new Card();
    private Timer m_timer = new Timer();
-   
+   private Timer n_timer = new Timer();
    
    private int[] selectCard = new int[16];
-   private int[] isOpen = {-1, -1};
+   private int[] openIndex = {-1, -1};
    private boolean isMatch = false;
    private int[] aryOpenCardIndex = {0, 0}; 
    
    private ImagePanel imagePanel;
    private JPanel topPanel, bottomPanel;
-   private JLabel lblTitle, lblLife, lblLife2;
+   private JLabel lblTitle,lblLife,lblLife2;
    private JButton btnHome, btnHint;
    private JPanel mainPanel;
    private CardLayout cardLayout;
@@ -54,23 +53,22 @@ class HardPanel extends JPanel
 
    
 
-   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
-   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
-   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
-   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
-   ImagePanel front4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
-   ImagePanel front5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
-   ImagePanel front6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
-   ImagePanel front7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
-   ImagePanel front8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
-   ImagePanel front9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
-   ImagePanel front10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
-   ImagePanel front11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
-   ImagePanel front12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
-   ImagePanel front13 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
-   ImagePanel front14 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_7.jpg").getImage());
+   ImagePanel front0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
+   ImagePanel front1 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
+   ImagePanel front2 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
+   ImagePanel front3 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
+   ImagePanel front4 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
+   ImagePanel front5 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
+   ImagePanel front6 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
+   ImagePanel front7 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_7.jpg").getImage());
+   ImagePanel front8 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_5.jpg").getImage());
+   ImagePanel front9 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_1.jpg").getImage());
+   ImagePanel front10 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_2.jpg").getImage());
+   ImagePanel front11 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_0.jpg").getImage());
+   ImagePanel front12 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_3.jpg").getImage());
+   ImagePanel front13 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_4.jpg").getImage());
+   ImagePanel front14 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_6.jpg").getImage());
    ImagePanel front15 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level3_7.jpg").getImage());
-
 
    
    public HardPanel(JPanel mainPanel,CardLayout cardLayout) {
@@ -130,13 +128,12 @@ class HardPanel extends JPanel
       for(int i = 0; i < 16; i++)
       {
          cardbackPanel[i] =  new JPanel();
-         cardbackPanel[i].setLayout(null);
-         cardPanel[i] = new JPanel();
-         cardPanel[i].setLayout(null);
-         bottomPanel.add(cardbackPanel[i]);
-         bottomPanel.add(cardPanel[i]);
-         
-         cardPanel[i].setVisible(false);
+   	     cardbackPanel[i].setLayout(null);
+   	     cardPanel[i] = new JPanel();
+   	     cardPanel[i].setLayout(null);
+   	     bottomPanel.add(cardbackPanel[i]);
+   	     bottomPanel.add(cardPanel[i]);
+   	     cardPanel[i].setVisible(false);
       }
    
       cardbackPanel[0].setBounds(100, 10, 60, 80);
@@ -202,6 +199,27 @@ class HardPanel extends JPanel
       cardBtn[14].setBounds(300, 450, 60, 30);
       cardBtn[15].setBounds(400, 450, 60, 30);
    
+      /*   
+      selectCard[0] = gameCard.getCardCode1(0);
+      selectCard[1] = gameCard.getCardCode1(1);
+      selectCard[2] = gameCard.getCardCode1(2);
+      selectCard[3] = gameCard.getCardCode1(3);
+      
+      selectCard[4] = gameCard.getCardCode1(4);
+      selectCard[5] = gameCard.getCardCode1(5);
+      selectCard[6] = gameCard.getCardCode1(6); 
+      selectCard[7] = gameCard.getCardCode1(7);
+      
+      selectCard[8] = gameCard.getCardCode1(8);
+      selectCard[9] = gameCard.getCardCode1(9);
+      selectCard[10] = gameCard.getCardCode1(10);
+      selectCard[11] = gameCard.getCardCode1(11);
+      
+      selectCard[12] = gameCard.getCardCode1(12);
+      selectCard[13] = gameCard.getCardCode1(13);
+      selectCard[14] = gameCard.getCardCode1(14);
+      selectCard[15] = gameCard.getCardCode1(15); 
+      */
       
        for (int i = 0; i < 16; i++) {
            selectCard[i] = gameCard.getCardCode1(i, "Hard");
@@ -222,241 +240,267 @@ class HardPanel extends JPanel
        cardPanel[13].setBounds(200, 370, 60, 80);
        cardPanel[14].setBounds(300, 370, 60, 80);
        cardPanel[15].setBounds(400, 370, 60, 80);
-      
        
-      }
+       for(int i = 0; i < 16 ; i++)
+       {
+		   for(int j = 0; j < 16 ; j++) {
+       			if(selectCard[i] == 0 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front0);
+       			}
+       			else if(selectCard[i] == 0 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front8);
+       			}
+       			else if(selectCard[i] == 1 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front1);
+       			}
+       			else if(selectCard[i] == 1 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front9);
+       			}
+       			else if(selectCard[i] == 2 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front2);
+       			}
+       			else if(selectCard[i] == 2 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front10);
+       			}
+       			else if(selectCard[i] == 3 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front3);
+       			}
+       			else if(selectCard[i] == 3 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front11);
+       			}
+       			else if(selectCard[i] == 4 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front4);
+       			}
+       			else if(selectCard[i] == 4 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front12);
+       			}
+       			else if(selectCard[i] == 5 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front5);
+       			}
+       			else if(selectCard[i] == 5 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front13);
+       			}
+       			else if(selectCard[i] == 6 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front6);
+       			}
+       			else if(selectCard[i] == 6 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front14);
+       			}
+       			else if(selectCard[i] == 7 && selectCard[i] != selectCard[j]) {
+       				cardPanel[i].add(front7);
+       			}
+       			else if(selectCard[i] == 7 && selectCard[i] == selectCard[j]) {
+       				cardPanel[i].add(front15);
+       			}
+       	
+		   }
+       }
+
+   }
    
-   public void InputCard(int btnNum) 
-   {
-         if(isOpen[0] != (-1))
+   public void InputCard(int btnNum) {
+         
+         //isOpen[1] = btnNum;
+         //cardBtn[isOpen[1]].setEnabled(false);
+         if(openIndex[0] != (-1))
           {
-             isOpen[1] = btnNum;
-             cardBtn[isOpen[1]].setEnabled(false);
-             if(selectCard[isOpen[1]] == 0)
+             openIndex[1] = btnNum;
+             cardBtn[openIndex[1]].setEnabled(false);
+             if(selectCard[openIndex[1]] == 0)
              {
-                  cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front0);
-                     front0.repaint();
-                     cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front0);
+           	  	front0.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 1)
+             else if(selectCard[openIndex[1]] == 1)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front1);
-                     front1.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front1);
+           	  	front1.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 2)
+             else if(selectCard[openIndex[1]] == 2)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front2);
-                     front2.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front2);
+           	  	front2.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 3)
+             else if(selectCard[openIndex[1]] == 3)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front3);
-                     front3.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front3);
+           	  	front3.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 4)
+             else if(selectCard[openIndex[1]] == 4)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front4);
-                     front4.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front4);
+           	  	front4.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 5)
+             else if(selectCard[openIndex[1]] == 5)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front5);
-                     front5.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front5);
+           	  	front5.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 6)
+             else if(selectCard[openIndex[1]] == 6)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front6);
-                     front6.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front6);
+           	  	front6.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[1]] == 7)
+             else if(selectCard[openIndex[1]] == 7)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front7);
-                     front7.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front7);
+           	  	front7.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
+      
           }
           else
           {
-             isOpen[0] = btnNum;
-             cardBtn[isOpen[0]].setEnabled(false);
-             if(selectCard[isOpen[0]] == 0)
+             openIndex[0] = btnNum;
+             cardBtn[openIndex[0]].setEnabled(false);
+             if(selectCard[openIndex[0]] == 0)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front8);
-                     front8.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front8);
+           	  	front8.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 1)
+             else if(selectCard[openIndex[0]] == 1)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front9);
-                     front9.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front9);
+           	  	front9.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 2)
+             else if(selectCard[openIndex[0]] == 2)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front10);
-                     front10.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front10);
+           	  	front10.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 3)
+             else if(selectCard[openIndex[0]] == 3)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front11);
-                     front11.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front11);
+           	  	front11.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 4)
+             else if(selectCard[openIndex[0]] == 4)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front12);
-                     front12.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front12);
+           	  	front12.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 5)
+             else if(selectCard[openIndex[0]] == 5)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front13);
-                     front13.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front13);
+           	  	front13.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 6)
+             else if(selectCard[openIndex[0]] == 6)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front14);
-                     front14.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front14);
+           	  	front14.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
-             else if(selectCard[isOpen[0]] == 7)
+             else if(selectCard[openIndex[0]] == 7)
              {
-                cardbackPanel[btnNum].setVisible(false);
-                cardPanel[btnNum].add(front15);
-                     front15.repaint();
-                    cardPanel[btnNum].setVisible(true);
+            	cardbackPanel[btnNum].setVisible(false);
+     			cardPanel[btnNum].add(front15);
+           	  	front15.repaint();
+           	  	cardPanel[btnNum].setVisible(true);
              }
+      
           }
        }
 
    public void MatchCard()
    {
-      if(isOpen[0] != (-1) && isOpen[1] != (-1))
+      if(openIndex[0] != (-1) && openIndex[1] != (-1))
       {
-         if(selectCard[isOpen[0]] == selectCard[isOpen[1]])
+         if(selectCard[openIndex[0]] == selectCard[openIndex[1]])
          {
             System.out.print("Match ");
-            cardBtn[isOpen[0]].setEnabled(false);
-            cardBtn[isOpen[1]].setEnabled(false);
-            cardbackPanel[isOpen[0]].setVisible(false);
-            cardbackPanel[isOpen[1]].setVisible(false);
-            cardPanel[isOpen[0]].setVisible(true);
-            cardPanel[isOpen[1]].setVisible(true);
+            cardBtn[openIndex[0]].setEnabled(false);
+            cardBtn[openIndex[1]].setEnabled(false);
+            cardbackPanel[openIndex[0]].setVisible(false);
+			cardbackPanel[openIndex[1]].setVisible(false);
+			cardPanel[openIndex[0]].setVisible(true);
+			cardPanel[openIndex[1]].setVisible(true);
          }
          else
          {
-            cardBtn[isOpen[0]].setEnabled(true);
-            cardBtn[isOpen[1]].setEnabled(true);
             presentLife -=1;
             lblLife.setText(Integer.toString(presentLife));
             if(presentLife == 0)
             {
-               ResetCardBtn();
-               presentLife = 5;
-               lblLife.setText(Integer.toString(presentLife));
-               cardLayout.show(mainPanel,"Home");
+            	ResetCardBtn();
+				presentLife = 5;
+				lblLife.setText(Integer.toString(presentLife));
+				cardLayout.show(mainPanel,"Home");
+                
             }
-            
+            cardBtn[openIndex[0]].setEnabled(true);
+            cardBtn[openIndex[1]].setEnabled(true);
             
             TimerTask m_task = new TimerTask() {
 
                @Override
                public void run() {
                   // TODO Auto-generated method stub
-                  
-                  for(int i = 0; i < 16; i++) 
-                  {
-                     if(cardBtn[i].isEnabled() == true )
-                     {
-                        cardPanel[i].setVisible(false);
-                     }
-                     
-                  }
-                        System.out.print("timer");
-                  for(int i = 0; i < 16; i++) 
-                  {
-                     if(cardBtn[i].isEnabled() == true )
-                     {
-                        cardbackPanel[i].setVisible(true);
-                     }
-                     
-                  }
-                  
+            	   for(int i = 0; i < 16; i++) {
+                  	 if(cardBtn[i].isEnabled() == true)
+                  	 {
+                  		 cardPanel[i].setVisible(false);
+                  	 }
+                   }
+                   
+                   System.out.print("timer");
+                   
+                   for(int i = 0; i < 16; i++) {
+                  	 if(cardBtn[i].isEnabled() == true)
+                  	 {
+                  		 cardbackPanel[i].setVisible(true);
+                  	 }
+                   }
                   
                }
             };
-            m_timer.schedule(m_task, 200);
+            m_timer.schedule(m_task, 500);
          }
-         isOpen[0] = isOpen[1] = -1;
+         openIndex[0] = openIndex[1] = -1;
       }
     }
-   
    public void end()
-   {
-      if(cardBtn[0].isEnabled() == false  && cardBtn[1].isEnabled() == false && cardBtn[2].isEnabled() == false && cardBtn[3].isEnabled() == false && cardBtn[4].isEnabled() == false && cardBtn[5].isEnabled() == false && cardBtn[6].isEnabled() == false && cardBtn[7].isEnabled() == false ) {
-         presentLife= 5;
-         cardPanel[0].setVisible(false);
-             cardPanel[1].setVisible(false);
-         cardPanel[2].setVisible(false);
-         cardPanel[3].setVisible(false);
-         cardPanel[4].setVisible(false);
-         cardPanel[5].setVisible(false);
-         cardPanel[6].setVisible(false);
-         cardPanel[7].setVisible(false);
-         cardPanel[8].setVisible(false);
-             cardPanel[9].setVisible(false);
-         cardPanel[10].setVisible(false);
-         cardPanel[11].setVisible(false);
-         cardPanel[12].setVisible(false);
-         cardPanel[13].setVisible(false);
-         cardPanel[14].setVisible(false);
-         cardPanel[15].setVisible(false);
-           
-         cardbackPanel[0].setVisible(true);
-         cardbackPanel[1].setVisible(true);
-         cardbackPanel[2].setVisible(true);
-         cardbackPanel[3].setVisible(true);
-         cardbackPanel[4].setVisible(true);
-         cardbackPanel[5].setVisible(true);
-         cardbackPanel[6].setVisible(true);
-         cardbackPanel[7].setVisible(true);
-         cardbackPanel[8].setVisible(true);
-         cardbackPanel[9].setVisible(true);
-         cardbackPanel[10].setVisible(true);
-         cardbackPanel[11].setVisible(true);
-         cardbackPanel[12].setVisible(true);
-         cardbackPanel[13].setVisible(true);
-         cardbackPanel[14].setVisible(true);
-         cardbackPanel[15].setVisible(true);
-         ResetCardBtn();
-             lblLife.setText(Integer.toString(presentLife));
+	{
+		if(cardBtn[0].isEnabled() == false  && cardBtn[1].isEnabled() == false && cardBtn[2].isEnabled() == false && cardBtn[3].isEnabled() == false && cardBtn[4].isEnabled() == false && cardBtn[5].isEnabled() == false && cardBtn[6].isEnabled() == false && cardBtn[7].isEnabled() == false && cardBtn[8].isEnabled() == false && cardBtn[9].isEnabled() == false && cardBtn[10].isEnabled() == false && cardBtn[11].isEnabled() == false && cardBtn[12].isEnabled() == false && cardBtn[13].isEnabled() == false && cardBtn[14].isEnabled() == false && cardBtn[15].isEnabled() == false ) {
+			presentLife= 5;
+			for(int i = 0; i < 16; i++)
+			{
+				cardPanel[i].setVisible(false);
+				cardbackPanel[i].setVisible(true);
+			}
+			ResetCardBtn();
+     	    lblLife.setText(Integer.toString(presentLife));
 
-         cardLayout.show(mainPanel,"Home");
-      }
-   }
+			cardLayout.show(mainPanel,"Home");
+		}
+	}
+
 
    public void ResetCardBtn()
    {
@@ -465,68 +509,65 @@ class HardPanel extends JPanel
       {
          cardBtn[i].setEnabled(true);
       }
-      isOpen[0] = isOpen[1] = -1;
+      openIndex[0] = openIndex[1] = -1;
       
    }
-   
-    private class ButtonListener implements ActionListener
-    {
-       public void actionPerformed(ActionEvent e) {
-          Object obj1 = e.getSource();
-          if(obj1 == btnHome) {
-             presentLife = 5;
-            
-             cardPanel[0].setVisible(false);
-             cardPanel[1].setVisible(false);
-           cardPanel[2].setVisible(false);
-           cardPanel[3].setVisible(false);
-           cardPanel[4].setVisible(false);
-           cardPanel[5].setVisible(false);
-           cardPanel[6].setVisible(false);
-           cardPanel[7].setVisible(false);
-             cardPanel[8].setVisible(false);
-             cardPanel[9].setVisible(false);
-           cardPanel[10].setVisible(false);
-           cardPanel[11].setVisible(false);
-           cardPanel[12].setVisible(false);
-           cardPanel[13].setVisible(false);
-           cardPanel[14].setVisible(false);
-           cardPanel[15].setVisible(false);
-           
-           cardbackPanel[0].setVisible(true);
-           cardbackPanel[1].setVisible(true);
-           cardbackPanel[2].setVisible(true);
-           cardbackPanel[3].setVisible(true);
-           cardbackPanel[4].setVisible(true);
-           cardbackPanel[5].setVisible(true);
-           cardbackPanel[6].setVisible(true);
-           cardbackPanel[7].setVisible(true);
-           cardbackPanel[8].setVisible(true);
-           cardbackPanel[9].setVisible(true);
-           cardbackPanel[10].setVisible(true);
-           cardbackPanel[11].setVisible(true);
-           cardbackPanel[12].setVisible(true);
-           cardbackPanel[13].setVisible(true);
-           cardbackPanel[14].setVisible(true);
-           cardbackPanel[15].setVisible(true);
-           ResetCardBtn();
-             lblLife.setText(Integer.toString(presentLife));
-              cardLayout.show(mainPanel,"Home");
-          }
-          
-          if(obj1 == btnHint) {
-             
-             
-          }
-          for (int i = 0; i < cardBtn.length; i++) 
-          {
-              if (obj1 == cardBtn[i]) {
-                  InputCard(i);
-                  MatchCard();
-                  end();
-              }
-          }
+   private void showHint() {
+       TimerTask n_task = new TimerTask() {
+           @Override
+           public void run() {
+               for (int i = 0; i < 16; i++) {
+                   if(cardBtn[i].isEnabled()==true) {
+                   	   cardbackPanel[i].setVisible(false);
+                       cardPanel[i].setVisible(true);
+                       
+                   }
+               }
 
-       }
-    }      
+               new Timer().schedule(new TimerTask() {
+                   @Override
+                   public void run() {
+                       for (int i = 0; i < 16; i++) {
+                           if(cardBtn[i].isEnabled()==true) {
+                           	   cardbackPanel[i].setVisible(true);
+                               cardPanel[i].setVisible(false);
+                               
+                           }
+                       }
+                   }
+               }, 3000);
+           }
+       };
+       n_timer.schedule(n_task, 0);
+   }
+   
+   private class ButtonListener implements ActionListener
+   {
+      public void actionPerformed(ActionEvent e) {
+         Object obj1 = e.getSource();
+         if(obj1 == btnHome) {
+        	 presentLife= 5;
+        	 for(int i = 0; i < 16; i++)
+ 			 {
+ 				cardPanel[i].setVisible(false);
+ 				cardbackPanel[i].setVisible(true);
+ 			 }
+        	 ResetCardBtn();
+        	 lblLife.setText(Integer.toString(presentLife));
+             cardLayout.show(mainPanel,"Home");
+         }
+         if(obj1 == btnHint)
+         {
+        	 showHint();
+         }
+         for (int i = 0; i < cardBtn.length; i++) 
+         {
+             if (obj1 == cardBtn[i]) {
+                 InputCard(i);
+                 MatchCard();
+                 end();
+             }
+         }
+      }
+   }      
 }
