@@ -373,6 +373,11 @@ class RegularPanel extends JPanel
   					  presentLife = 4;
   					  lblLife.setText(Integer.toString(presentLife));
                 	  cardLayout.show(mainPanel,"Home");
+                	  
+                	  for(int i = 0; i < 8; i++) {
+  						cardPanel[i].setVisible(false);
+  						cardbackPanel[i].setVisible(true);
+  					}
                   }
                   cardBtn[openIndex[0]].setEnabled(true);
                   cardBtn[openIndex[1]].setEnabled(true);

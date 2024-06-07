@@ -313,6 +313,11 @@ class EasyPanel extends JPanel {
 					btnHint.setEnabled(true);
 			        lblLife.setText(Integer.toString(presentLife));
 					cardLayout.show(mainPanel,"Home");
+					
+					for(int i = 0; i < 8; i++) {
+						cardPanel[i].setVisible(false);
+						cardbackPanel[i].setVisible(true);
+					}
 				}
 				
 				
@@ -407,7 +412,7 @@ class EasyPanel extends JPanel {
         	  for(int i = 0; i < 8; i++)
         	  {
         		  cardPanel[i].setVisible(false);
-        		  cardbackPanel[i].setVisible(false);
+        		  cardbackPanel[i].setVisible(true);
         		  
         	  }
 			  ResetCardBtn();
