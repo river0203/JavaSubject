@@ -362,11 +362,6 @@ class RegularPanel extends JPanel
                   System.out.print("Match ");
                   cardBtn[openIndex[0]].setEnabled(false);
                   cardBtn[openIndex[1]].setEnabled(false);
-                  /*cardbackPanel[isOpen[0]].setVisible(false);
-                  cardbackPanel[isOpen[1]].setVisible(false);
-                  cardPanel[isOpen[0]].setVisible(true);
-                  cardPanel[isOpen[1]].setVisible(true);*/
-                  
                }
                else
                {

@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class Card{
-	private int gameLife = 3;
 	private Integer[] aryCardCoedEasy = {1, 2, 2, 0, 1, 0, 3, 4, 3};
 	private Integer[] aryCardCoedRegular = {0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3};
 	private Integer[] aryCardCodeHard = {0, 1, 2, 3, 0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7};
@@ -41,13 +40,4 @@ public class Card{
             throw new IllegalArgumentException("Invalid difficulty level");
         }
     }
-
-	public int getGameLifer()
-	{
-		return gameLife;
-	}
-	public void setLife(int life) 
-	{
-        this.gameLife = life;
-     }
 }

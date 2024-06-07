@@ -29,7 +29,7 @@ class EasyPanel extends JPanel {
     private JPanel mainPanel;
     private CardLayout cardLayout;
     private ButtonListener btnL;
-    private int presentLife = gameCard.getGameLifer();
+    private int presentLife = 3;
     
     
     ImagePanel back0 = new ImagePanel(new ImageIcon("/C:/Users/aspp3/OneDrive/문서/GitHub/JavaSubject/JavaSubject/src/Image/Level1Back.jpg").getImage());
