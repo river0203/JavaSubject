@@ -221,7 +221,7 @@ class HardPanel extends JPanel
        
        for(int i = 0; i < 16 ; i++)
        {
-		   for(int j = 0; j < 16 ; j++) {
+		   for(int j = 15; j > i ; j--) {
        			if(selectCard[i] == 0 && selectCard[i] != selectCard[j]) {
        				cardPanel[i].add(front0);
        			}

@@ -199,7 +199,7 @@ class RegularPanel extends JPanel
          
          for(int i = 0; i < 12; i++)
          {
-  		   for(int j = 0; j < 12 ; j++) {
+  		   for(int j = 11; j > i ; j--) {
          			if(selectCard[i] == 0 && selectCard[i] != selectCard[j]) {
          				cardPanel[i].add(front0);
          			}
