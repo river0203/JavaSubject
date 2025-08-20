@@ -1,19 +1,17 @@
-class PlayView
-{
-private:
-    /* data */
-public:
-    PlayView(/* args */);
-    ~PlayView();
-    class Card
-    {
-        public:
-
-
-    };
-};
+#include <thread>
+#include <SFML/Graphics.hpp>
+#include "PlayView.h"
 
 PlayView::PlayView()
 {
         
 }
+
+void Card::change_card_img(int card_position_value)
+{
+    if(/*mouseClickEvnet == true*/)
+    {
+        
+    }
+}
+
